@@ -1,0 +1,37 @@
+# Ghidra headless oracles for tuneprog: the facts-driven high P-Code export and
+# the P-Code emulator semantic oracle over deity-informant's 6510 SLEIGH module.
+# Multistage: Ghidra and the deity-informant checkout are cached layers, so a
+# source edit here re-runs only the last two.
+
+ARG GHIDRA_URL=https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.1.2_build/ghidra_12.1.2_PUBLIC_20260605.zip
+ARG DEITY_REF=main
+
+FROM eclipse-temurin:21-jdk AS ghidra
+ARG GHIDRA_URL
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends curl unzip ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+RUN curl -fsSL -o /tmp/ghidra.zip "$GHIDRA_URL" \
+    && unzip -q /tmp/ghidra.zip -d /opt \
+    && mv /opt/ghidra_* /opt/ghidra \
+    && rm /tmp/ghidra.zip
+
+FROM eclipse-temurin:21-jdk AS run
+ARG DEITY_REF
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends python3 python3-pip git \
+    && rm -rf /var/lib/apt/lists/*
+COPY --from=ghidra /opt/ghidra /opt/ghidra
+ENV GHIDRA_INSTALL_DIR=/opt/ghidra DEITY_INFORMANT_SRC=/deity
+# deity-informant from source: the SLEIGH build and the hello-world demo are not
+# in its wheel. Compile+install the 6510 language into the Ghidra tree so
+# -processor 6510:LE:16:default resolves under headless.
+RUN git clone https://github.com/anarkiwi/deity-informant /deity \
+    && git -C /deity checkout "$DEITY_REF" \
+    && pip3 install --break-system-packages -e /deity \
+    && python3 /deity/ghidra/6510/build.py --install \
+        "$GHIDRA_INSTALL_DIR/Ghidra/Processors/6510/data/languages"
+WORKDIR /src
+COPY . /src
+RUN pip3 install --break-system-packages -e .
+CMD ["sh", "ghidra/6510/headless/run.sh"]

@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+.coverage.*
+build/
+dist/
+
+# fetched fixtures / reference material (never committed)
+*.sid
+*.prg
+*.pdf
+nomoresecrets.pdf
+
+# oracle harness caches (fetched HVSC tunes + sidtrace CSVs, never committed;
+# no trailing slash, so a symlink to a shared cache is ignored as well as a dir).
+# The glob covers a scratch cache too: `DEITY_ORACLE_CACHE` names the directory,
+# so anything a run points it at must be ignored, not just the default name
+.oracle-cache*
+
+# local artifacts
+.sweep-cache
+.venv/
+out/
+core
+core.*
+
+# agent worktrees / local harness state
+.claude/
+.nfs*
+
+# deity-informant source checkout (CI)
+_deity/
