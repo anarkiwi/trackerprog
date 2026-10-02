@@ -4,9 +4,9 @@ import json
 
 import pytest
 
-from deity_informant.tuneprog import ghidra_compare as GC, ghidra_facts as GF, pipeline
-from deity_informant.tuneprog.cfg import procs_json
-from deity_informant.tuneprog.lift import lift_trace
+from tuneprog import ghidra_compare as GC, ghidra_facts as GF, pipeline
+from tuneprog.cfg import procs_json
+from tuneprog.lift import lift_trace
 
 from _asm import asm, trace_prog
 

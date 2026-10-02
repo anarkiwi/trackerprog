@@ -55,7 +55,7 @@ and what the lowering it replaced measured is its §8.
 **Not now.** Multispeed (§10); the `mods`/`arms` split of the accumulator
 record — the census is about forms, not bytes, and the eight forms it struck
 take one key each out of the objects that carried them. And the package split:
-`deity_informant/trackerprog/` holds the trackerprog's `universal`, `printer`,
+`trackerprog/` holds the trackerprog's `universal`, `printer`,
 `attest`, `poison` beside the scoreprog's `emit`, `interp`, `region`, `resolve`,
 `lift`, `score`, `streams`, `pitch`, `cursors`, `hist`, `certify`. B7 deletes
 half of one side, so it waits for B7 to land or to be refused.

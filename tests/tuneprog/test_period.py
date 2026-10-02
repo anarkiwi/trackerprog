@@ -1,8 +1,8 @@
 """The periodicity classifier: smallest periods, counter blockers, aperiodic tunes."""
 
-from deity_informant.tuneprog.machine import Entry
-from deity_informant.tuneprog.period import Samples, classify, min_period
-from deity_informant.tuneprog.trace import Tracer
+from tuneprog.machine import Entry
+from tuneprog.period import Samples, classify, min_period
+from tuneprog.trace import Tracer
 
 from _asm import asm, sid_image
 

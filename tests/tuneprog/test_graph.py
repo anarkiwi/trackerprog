@@ -1,7 +1,7 @@
 """The shared control-flow graph: predecessors, dominators, natural loops."""
 
-from deity_informant.tuneprog import graph as G
-from deity_informant.tuneprog.ir import Block, Const, Goto, If, Proc, Return, Switch, Trap, Var
+from tuneprog import graph as G
+from tuneprog.ir import Block, Const, Goto, If, Proc, Return, Switch, Trap, Var
 
 
 def _proc(*blocks, entry="b0"):

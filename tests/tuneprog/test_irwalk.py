@@ -2,8 +2,8 @@
 
 import pytest
 
-from deity_informant.tuneprog import irwalk as W
-from deity_informant.tuneprog.ir import (
+from tuneprog import irwalk as W
+from tuneprog.ir import (
     Assert,
     Bin,
     Block,

@@ -19,8 +19,8 @@ import json
 import numpy as np
 import pytest
 
-from deity_informant.tuneprog.machine import Entry
-from deity_informant.tuneprog.trace import Tracer
+from tuneprog.machine import Entry
+from tuneprog.trace import Tracer
 
 from _asm import asm, banked_out, sid_image
 

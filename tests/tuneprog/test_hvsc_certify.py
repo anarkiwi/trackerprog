@@ -12,11 +12,11 @@ from pathlib import Path
 
 import pytest
 
-from deity_informant.tuneprog import emit, ssa
-from deity_informant.tuneprog.build import build_ir
-from deity_informant.tuneprog.idioms import rewrite
-from deity_informant.tuneprog.irwalk import loads
-from deity_informant.tuneprog.verify import certify, verify
+from tuneprog import emit, ssa
+from tuneprog.build import build_ir
+from tuneprog.idioms import rewrite
+from tuneprog.irwalk import loads
+from tuneprog.verify import certify, verify
 
 from _hvsc import AUTOMATAS, COMMANDO, front_end, tune_file
 

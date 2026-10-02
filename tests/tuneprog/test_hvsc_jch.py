@@ -9,7 +9,7 @@ import re
 
 import pytest
 
-from deity_informant.tuneprog import copymerge
+from tuneprog import copymerge
 
 from _hvsc import GULDKORN, KNOB, decompiled
 

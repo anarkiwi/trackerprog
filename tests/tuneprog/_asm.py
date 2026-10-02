@@ -96,7 +96,7 @@ def asm(org, *lines):
 
 
 def image(blocks, data=None):
-    """A 64 KiB image: ``blocks`` is ``{org: bytes}``, ``data`` is ``{addr: byte}``."""
+    """A whole-address-space image: ``blocks`` is ``{org: bytes}``, ``data`` is ``{addr: byte}``."""
     m = bytearray(0x10000)
     for org, code in blocks.items():
         m[org : org + len(code)] = code
@@ -131,7 +131,7 @@ def psid(blocks, init, play, data=None, load=0x1000, songs=1, speed=0, magic=b"P
 
 def sid_image(blocks, init, play, data=None, load=0x1000):
     """``MachineImage`` of a synthetic tune (see :func:`psid`)."""
-    from deity_informant.tuneprog.machine import MachineImage
+    from tuneprog.machine import MachineImage
 
     return MachineImage.from_sid(psid(blocks, init, play, data, load))
 
@@ -162,8 +162,8 @@ def trace_prog(
     **kw,
 ):
     """Trace a synthetic tune; returns ``(Trace, Tracer)``."""
-    from deity_informant.tuneprog.machine import Entry
-    from deity_informant.tuneprog.trace import Tracer
+    from tuneprog.machine import Entry
+    from tuneprog.trace import Tracer
 
     img = sid_image(blocks, init, play, data, load)
     if kind == "irq" and not kernal:

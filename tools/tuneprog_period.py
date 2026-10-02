@@ -3,7 +3,7 @@
 
 Traces one subtune in ``--budget`` CPU-second chunks (exit 2 while work is left),
 sampling every footprint cell and every SID write per tick, then reports
-:func:`deity_informant.tuneprog.period.classify`; ``--resume`` continues a run.
+:func:`tuneprog.period.classify`; ``--resume`` continues a run.
 """
 
 import argparse
@@ -19,9 +19,9 @@ for _v in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS"):
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 # pylint: disable=wrong-import-position
-from deity_informant.tuneprog.machine import find_entries  # noqa: E402
-from deity_informant.tuneprog.period import Samples, classify  # noqa: E402
-from deity_informant.tuneprog.trace import Tracer  # noqa: E402
+from tuneprog.machine import find_entries  # noqa: E402
+from tuneprog.period import Samples, classify  # noqa: E402
+from tuneprog.trace import Tracer  # noqa: E402
 
 MORE = 2
 

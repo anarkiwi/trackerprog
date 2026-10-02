@@ -1,15 +1,15 @@
 """Snippet -> tuneprog helpers shared by the IR, SSA, idiom, codegen and print tests."""
 
-from deity_informant.tuneprog import copymerge, pipeline, printer
-from deity_informant.tuneprog.build import build_ir
-from deity_informant.tuneprog.cfg import build_procs
-from deity_informant.tuneprog.idioms import rewrite
-from deity_informant.tuneprog.lift import lift_trace
-from deity_informant.tuneprog.ir import STACK_HI, STACK_LO, Store
-from deity_informant.tuneprog.irwalk import node_loads
-from deity_informant.tuneprog.regions import build_regions
-from deity_informant.tuneprog.ssa import Folds, simplify
-from deity_informant.tuneprog.stack import eliminate
+from tuneprog import copymerge, pipeline, printer
+from tuneprog.build import build_ir
+from tuneprog.cfg import build_procs
+from tuneprog.idioms import rewrite
+from tuneprog.lift import lift_trace
+from tuneprog.ir import STACK_HI, STACK_LO, Store
+from tuneprog.irwalk import node_loads
+from tuneprog.regions import build_regions
+from tuneprog.ssa import Folds, simplify
+from tuneprog.stack import eliminate
 
 from _asm import asm, trace_prog
 

@@ -1,6 +1,6 @@
 """S6 group views: the role a split record's own field earns from its cells."""
 
-from deity_informant.tuneprog import pipeline
+from tuneprog import pipeline
 
 from _asm import asm
 from _prog import PLAY, printed, tuneprog

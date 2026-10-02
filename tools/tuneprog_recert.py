@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 # pylint: disable=wrong-import-position
-from deity_informant.tuneprog import ghidra_compare, ghidra_facts, pipeline, tunes  # noqa: E402
+from tuneprog import ghidra_compare, ghidra_facts, pipeline, tunes  # noqa: E402
 
 MORE = 3  # "invoke me again": distinct from argparse's and the pipeline's exit 2
 CERTS = ROOT / "docs" / "certificates"

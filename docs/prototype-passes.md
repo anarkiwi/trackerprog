@@ -1,6 +1,6 @@
 # Prototype: the tuneprog-to-trackerprog pipeline as compiler passes
 
-`deity_informant/trackerprog/universal.py` is an interpreter, a trackerprog is
+`trackerprog/universal.py` is an interpreter, a trackerprog is
 its program, and a tune's certified tick is that interpreter specialised on one.
 The lift is the inverse, and this states it as compiler passes: six levels, each
 a representation the next pass consumes, and from L2 on each level is **itself a

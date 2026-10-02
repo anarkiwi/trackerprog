@@ -16,7 +16,7 @@ ROOT = HERE.parent.parent
 sys.path.insert(0, str(ROOT / "tests" / "tuneprog"))
 sys.path.insert(0, str(ROOT / "tools"))
 
-from deity_informant.tuneprog import pipeline  # noqa: E402
+from tuneprog import pipeline  # noqa: E402
 from trackerprog_passes import from_l0  # noqa: E402
 
 from _hvsc import (  # noqa: E402

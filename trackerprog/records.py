@@ -8,8 +8,8 @@ into what the record runs under and what its delta alone applies under.
 
 from __future__ import annotations
 
-from ..tuneprog.ir import Bin, Const, Load, Store
-from ..tuneprog.irwalk import addr_split, walk
+from tuneprog.ir import Bin, Const, Load, Store
+from tuneprog.irwalk import addr_split, walk
 from .rows import Rows, _carried
 from .shape import _reads, _u16name
 

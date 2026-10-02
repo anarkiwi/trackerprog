@@ -7,10 +7,10 @@ import pytest
 
 import deity_informant as P
 from deity_informant.lifter import ILLEGAL_OPCODES, MODE_LEN, OPS
-from deity_informant.tuneprog import ir
-from deity_informant.tuneprog.lower import ops_to_stmts, straightline
-from deity_informant.tuneprog.interp import Interp, Machine
-from deity_informant.tuneprog.ir import (
+from tuneprog import ir
+from tuneprog.lower import ops_to_stmts, straightline
+from tuneprog.interp import Interp, Machine
+from tuneprog.ir import (
     Bin,
     Block,
     Const,
@@ -28,10 +28,9 @@ from deity_informant.tuneprog.ir import (
     W16,
 )
 
-import _common as H
 from _prog import counter, front, tuneprog
 
-PC = H.PC
+PC = 0x0800
 STRAIGHT = [
     op
     for op in range(256)
@@ -152,7 +151,7 @@ def test_trap_terminator_and_switch_default():
 
 
 def test_assert_statement_traps():
-    from deity_informant.tuneprog.ir import Assert
+    from tuneprog.ir import Assert
 
     prog = _tiny([Assert(Const(0), "nope")])
     with pytest.raises(TrapError, match="nope"):
@@ -251,7 +250,7 @@ def test_ram_under_io_is_read_from_memory_not_the_input_stream():
 
 
 def test_a_return_of_one_value_and_its_flags_shows_the_value():
-    from deity_informant.tuneprog.ir import Bin, Const, Load, Proc, REGIDX, Return, retexpr
+    from tuneprog.ir import Bin, Const, Load, Proc, REGIDX, Return, retexpr
 
     v = Load("ram", Const(0x1000, 2), 1, 0x1000, 0x1000, 1)
     z = Bin("==", v, Const(0, 1), 1)

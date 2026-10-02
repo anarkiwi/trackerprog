@@ -7,11 +7,11 @@ at 10 s. The full 32-subtune certificates are ``docs/certificates/ghouls-*.json`
 
 import pytest
 
-from deity_informant.tuneprog import ssa
-from deity_informant.tuneprog.ir import Const, Let, Load, Store, Switch, Var, retval
+from tuneprog import ssa
+from tuneprog.ir import Const, Let, Load, Store, Switch, Var, retval
 
 from _hvsc import EMOMYST, GNG, body as proc_body, decompiled, folded, switches
-from deity_informant.tuneprog.verify import verify
+from tuneprog.verify import verify
 
 pytestmark = pytest.mark.hvsc
 

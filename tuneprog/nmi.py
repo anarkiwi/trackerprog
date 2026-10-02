@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from .. import c64
+from deity_informant import c64
 from .cia import CIA2_BASE, ICR_TA, ICR_TB
 from .ir import IO_HI, IO_LO, STACK_HI, STACK_LO
 from .machine import Entry, Refusal, kernal_mapped

@@ -18,8 +18,8 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tuneprog"))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "tools"))
 
-from deity_informant.trackerprog import printer  # noqa: E402
-from deity_informant.trackerprog.attest import attest  # noqa: E402
+from trackerprog import printer  # noqa: E402
+from trackerprog.attest import attest  # noqa: E402
 
 import trackerprog_blackbird as TB  # noqa: E402
 from _hvsc import QUINTESSENCE, tune_file  # noqa: E402

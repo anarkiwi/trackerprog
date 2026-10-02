@@ -19,9 +19,9 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tuneprog"))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "tools"))
 
-from deity_informant.trackerprog import printer  # noqa: E402
-from deity_informant.trackerprog.attest import attest  # noqa: E402
-from deity_informant.trackerprog.universal import render  # noqa: E402
+from trackerprog import printer  # noqa: E402
+from trackerprog.attest import attest  # noqa: E402
+from trackerprog.universal import render  # noqa: E402
 
 import trackerprog_walker as TW  # noqa: E402
 from _hvsc import CHAMELEON, tune_file  # noqa: E402

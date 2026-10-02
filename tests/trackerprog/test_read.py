@@ -20,8 +20,8 @@ from _bound import (
     tick,
 )
 from _procs import diamond, dispatch
-from deity_informant.trackerprog import read
-from deity_informant.tuneprog.ir import Bin, Load, Store
+from trackerprog import read
+from tuneprog.ir import Bin, Load, Store
 
 
 # ---- read.py: the leaves and the arithmetic ------------------------------------

@@ -9,8 +9,8 @@ from __future__ import annotations
 
 import copy
 
-from ..tuneprog.graph import rpo
-from ..tuneprog.ir import (
+from tuneprog.graph import rpo
+from tuneprog.ir import (
     Bin,
     Block,
     Call,
@@ -26,7 +26,7 @@ from ..tuneprog.ir import (
     retarget,
     succs,
 )
-from ..tuneprog.irwalk import apply_stmt, apply_term, defs_of, renamer, stmt_uses, term_uses
+from tuneprog.irwalk import apply_stmt, apply_term, defs_of, renamer, stmt_uses, term_uses
 
 PASSES = 512
 IN, OUT = "$p$", "$r$"  # what a copy reads a register in, and what it leaves it in

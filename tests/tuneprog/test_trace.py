@@ -2,11 +2,11 @@
 
 import pytest
 
-from deity_informant.tuneprog.machine import Entry, Refusal, init_runner
-from deity_informant.tuneprog.trace import Trace, Tracer, run_trace, site_key
-from deity_informant.tuneprog.tracevm import TraceVM, input_kind
+from tuneprog.machine import Entry, Refusal, init_runner
+from tuneprog.trace import Trace, Tracer, run_trace, site_key
+from tuneprog.tracevm import TraceVM, input_kind
 from deity_informant import lift
-from deity_informant.tuneprog.lift import lift_trace
+from tuneprog.lift import lift_trace
 
 from _asm import asm, banked_out, sid_image, trace_prog
 

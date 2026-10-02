@@ -11,8 +11,8 @@ from __future__ import annotations
 
 from dataclasses import fields, is_dataclass
 
-from ...tuneprog.graph import preds_of, rpo, succs
-from ...tuneprog.ir import (
+from tuneprog.graph import preds_of, rpo, succs
+from tuneprog.ir import (
     Bin,
     Block,
     Const,
@@ -25,7 +25,7 @@ from ...tuneprog.ir import (
     Var,
     retarget,
 )
-from ...tuneprog.irwalk import addr_split, stmt_uses, term_uses, walk
+from tuneprog.irwalk import addr_split, stmt_uses, term_uses, walk
 from .. import callee, record, schedule, tables
 from ..cells import Cells
 from .ir import Level
@@ -215,7 +215,8 @@ def arrays(cells, p):
     out = {}
     for b in p.blocks.values():
         for s in b.stmts:
-            for e in ((s.a, s.v) if type(s) is Store else (s.e,) if type(s) is Let else ()):
+            exprs = (s.a, s.v) if type(s) is Store else (s.e,) if type(s) is Let else ()
+            for e in exprs:
                 for x in _loads(e):
                     got = cells.at(x)
                     if got and got[0] == "voice":

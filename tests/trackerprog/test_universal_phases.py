@@ -10,8 +10,8 @@ edge, and a step past the top of the tuning.
 
 import pytest
 
-from deity_informant.trackerprog import printer
-from deity_informant.trackerprog.universal import Player, render
+from trackerprog import printer
+from trackerprog.universal import Player, render
 
 FLO, FHI, PLO, PHI, CTRL, AD, SR = 0, 1, 2, 3, 4, 5, 6
 CELLS = ("spdcnt", "pending", "hrins", "arpscnt", "wave", "gate", "pw", "freq", "chordpos")
@@ -320,7 +320,7 @@ def test_a_producer_may_write_the_chip_without_moving_the_cell():
     o["state0"]["cursors"] = {"wave": [{"row": 1, "hold": 0}]}
     p = Player(o)
     w = [p.tick() for _ in range(5)]
-    assert p.c["freq"][0] == 0x0300  # the step took note 2 into the cell
+    assert p.c["freq"][0] == 0x0300  # the step brought note 2 into the cell
     assert col(w, FLO)[3] == [0x05]  # and the producer wrote five past it
 
 

@@ -2,12 +2,12 @@
 
 No tune and no HVSC: the smallest object the player will build, and expressions
 read through the closures they compile to, so every branch of
-:mod:`deity_informant.trackerprog.compiler` is exercised by data alone.
+:mod:`trackerprog.compiler` is exercised by data alone.
 """
 
 import pytest
 
-from deity_informant.trackerprog.universal import Player
+from trackerprog.universal import Player
 
 X = {"cell": "x"}  # the one cell these snippets read: 5, on the one voice
 

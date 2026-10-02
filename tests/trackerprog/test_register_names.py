@@ -13,7 +13,7 @@ import pytest
 ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 
-from deity_informant.trackerprog.universal import CHIP, REG  # noqa: E402
+from trackerprog.universal import CHIP, REG  # noqa: E402
 
 import trackerprog_poison as TP  # noqa: E402
 

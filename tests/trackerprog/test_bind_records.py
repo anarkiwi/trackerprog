@@ -2,8 +2,8 @@
 
 from _bound import C, FREQ, GLOB, INSC, NOTE, SWEEP, V, VOICES, WAVE, binder, other, reader
 from _procs import halver
-from deity_informant.trackerprog import records
-from deity_informant.tuneprog.ir import Load
+from trackerprog import records
+from tuneprog.ir import Load
 
 
 def acc(**kw):

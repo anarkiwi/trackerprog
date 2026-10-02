@@ -4,8 +4,8 @@ import json
 import re
 
 from deity_informant import cli
-from deity_informant.tuneprog import live, pipeline, printer, pseudocode, recover, structure
-from deity_informant.tuneprog.ir import Tuneprog
+from tuneprog import live, pipeline, printer, pseudocode, recover, structure
+from tuneprog.ir import Tuneprog
 
 from _asm import asm, psid
 from _prog import PLAY, counter, printed, proc_body, tuneprog

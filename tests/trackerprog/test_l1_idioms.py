@@ -2,7 +2,7 @@
 
 Each fragment names the family that forced it (the "what the layer needed"
 section of that family's own document) and asserts
-:func:`~deity_informant.trackerprog.passes.l1_structure.structure` produces the
+:func:`~trackerprog.passes.l1_structure.structure` produces the
 generic concept -- an inlined callee, a rerolled run, a voice loop with an
 induction variable, a per-voice array, a tuning -- with no branch on a family.
 """
@@ -36,14 +36,14 @@ from _frag import (  # noqa: E402
     store,
     voiceblocks,
 )
-from deity_informant.trackerprog.passes import l1_structure  # noqa: E402
-from deity_informant.trackerprog.passes.ir import (  # noqa: E402
+from trackerprog.passes import l1_structure  # noqa: E402
+from trackerprog.passes.ir import (  # noqa: E402
     Diverged,
     Level,
     irwrites,
     validate,
 )
-from deity_informant.tuneprog.ir import (  # noqa: E402
+from tuneprog.ir import (  # noqa: E402
     Bin,
     Block,
     Call,
@@ -247,7 +247,7 @@ def test_no_pass_of_the_pipeline_names_a_family():
         "galway",
     )
     root = Path(__file__).resolve().parent.parent.parent
-    for path in sorted((root / "deity_informant/trackerprog/passes").glob("*.py")):
+    for path in sorted((root / "trackerprog/passes").glob("*.py")):
         text = path.read_text().lower()
         body = "\n".join(l for l in text.splitlines() if not l.strip().startswith("#"))
         for name in bad:

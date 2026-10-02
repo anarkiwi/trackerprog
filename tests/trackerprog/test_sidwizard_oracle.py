@@ -13,8 +13,8 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tuneprog"))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "tools"))
 
-from deity_informant.trackerprog import printer  # noqa: E402
-from deity_informant.trackerprog.attest import attest  # noqa: E402
+from trackerprog import printer  # noqa: E402
+from trackerprog.attest import attest  # noqa: E402
 
 import trackerprog_sidwizard as TS  # noqa: E402
 from _hvsc import EMOMYST, EOTW, tune_file  # noqa: E402
@@ -112,7 +112,7 @@ def test_no_command_is_named_by_the_index_its_player_dispatched_on(tune):
 
 
 def _canonical(events):
-    """Section 3.6's event, as the layer states it after the note column is spent."""
+    """Section 3.6's event, as the layer states it after the note column is consumed."""
     for e in events:
         assert set(e) == {"dur", "sounds", "tie", "gate", "note", "ins", "arm"}
         assert isinstance(e["sounds"], bool)
@@ -230,7 +230,7 @@ def _header(ins):
     Nine are the record's own columns; three -- the vibrato delay, the arpeggio
     speed and the chord -- are the constants the note-on bakes, and are no column
     of the record because nothing reads them back (section 3.5).  Positions 10
-    and 11 are the two table indices, spent into the rows they select, and 12-14
+    and 11 are the two table indices, consumed into the rows they select, and 12-14
     the gate-off pointer, which the note-on refuses where it is not zero.
     """
     sets = {t: v for r in ins["on_note"] for t, v in r.get("sets", ())}

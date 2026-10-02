@@ -9,7 +9,7 @@ until one of them carries a length.
 
 import pytest
 
-from deity_informant.trackerprog.universal import Player, render
+from trackerprog.universal import Player, render
 
 
 def obj(play, patterns, **meta):

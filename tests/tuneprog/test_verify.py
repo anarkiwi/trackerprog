@@ -4,8 +4,8 @@ import pickle
 
 import pytest
 
-from deity_informant.tuneprog.ir import Const, Store
-from deity_informant.tuneprog.verify import Reference, Verifier, certify, prefix_check, verify
+from tuneprog.ir import Const, Store
+from tuneprog.verify import Reference, Verifier, certify, prefix_check, verify
 
 from _asm import asm
 from _prog import PLAY, counter, tuneprog

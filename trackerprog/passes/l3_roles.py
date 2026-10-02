@@ -15,8 +15,8 @@ from __future__ import annotations
 
 import copy
 
-from ...tuneprog.ir import Store
-from ...tuneprog.irwalk import addr_split
+from tuneprog.ir import Store
+from tuneprog.irwalk import addr_split
 from .. import schedule, tables
 from ..shape import _order_cursor, _reads
 from .ir import Level

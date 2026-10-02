@@ -12,8 +12,8 @@ phase -- which the unchanged player renders.
 
 from __future__ import annotations
 
-from ...tuneprog.ir import If, Store, Var
-from ...tuneprog.irwalk import walk
+from tuneprog.ir import If, Store, Var
+from tuneprog.irwalk import walk
 from .. import build, schedule, shadow, tables
 from ..emit import commit_order
 from ..read import Reader, Unlowerable

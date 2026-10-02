@@ -17,9 +17,9 @@ ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 
 DOC = ROOT / "docs" / "prototype-trackerprog.md"
-PLAYER = ROOT / "deity_informant" / "trackerprog" / "universal.py"
-PRINTER = ROOT / "deity_informant" / "trackerprog" / "printer.py"
-COMPILER = ROOT / "deity_informant" / "trackerprog" / "compiler.py"
+PLAYER = ROOT / "trackerprog" / "universal.py"
+PRINTER = ROOT / "trackerprog" / "printer.py"
+COMPILER = ROOT / "trackerprog" / "compiler.py"
 
 # read by the player, in the box; annotations, marked as such in the box
 READ = set(

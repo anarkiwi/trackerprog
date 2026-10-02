@@ -13,9 +13,9 @@ from collections import namedtuple
 
 import numpy as np
 
-from ..tuneprog.ir import Bin, Const, Load, R16, Store, Var, W16, overlaps
-from ..tuneprog.irwalk import addr_split
-from ..tuneprog.accshape import terms
+from tuneprog.ir import Bin, Const, Load, R16, Store, Var, W16, overlaps
+from tuneprog.irwalk import addr_split
+from tuneprog.accshape import terms
 from .cursors import TABLE, _halves, basekind, decompose, istable, selector
 from .resolve import Sel, free, walkx
 from .refuse import Refusal

@@ -5,10 +5,10 @@ a per-voice pattern pointer and a machine segment; the T0/T1/T2 planes a binding
 reads beside it; and the object one lift of the whole emits.
 """
 
-from deity_informant.trackerprog import bind, build, read, rows
-from deity_informant.trackerprog.cells import Cells
-from deity_informant.trackerprog.vocab import Vocab
-from deity_informant.tuneprog.ir import (
+from trackerprog import bind, build, read, rows
+from trackerprog.cells import Cells
+from trackerprog.vocab import Vocab
+from tuneprog.ir import (
     Bin,
     Block,
     Const,
@@ -22,7 +22,7 @@ from deity_informant.tuneprog.ir import (
     Store,
     Var,
 )
-from deity_informant.tuneprog.recover import Names
+from tuneprog.recover import Names
 
 FREQ, WAVE, ADSR = 0x2000, 0x2100, 0x2101
 ORD, PAT = 0x2200, 0x2300

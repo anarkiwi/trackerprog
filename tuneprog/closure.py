@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from collections import Counter
 
-from ..lifter import lift
+from deity_informant.lifter import lift
 from .cfg import branch_arms
 from .ir import STACK_HI, STACK_LO, Trap, succs
 from .tracedata import site_key

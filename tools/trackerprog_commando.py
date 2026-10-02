@@ -44,9 +44,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 # pylint: disable=wrong-import-position
 from deity_informant.lifter import lift  # noqa: E402
-from deity_informant.trackerprog import printer  # noqa: E402
-from deity_informant.trackerprog.attest import attest  # noqa: E402
-from deity_informant.trackerprog.universal import render  # noqa: E402
+from trackerprog import printer  # noqa: E402
+from trackerprog.attest import attest  # noqa: E402
+from trackerprog.universal import render  # noqa: E402
 from deity_informant.vm import PcodeVM, run_sub  # noqa: E402
 
 FREQ_ORIGIN = 0x5428  # pitch index n is the u16 at FREQ_ORIGIN + 2n
@@ -171,7 +171,7 @@ def pitch(m, pairs):
       tuning and its behaviour at that bound is its own -- twelve words indexed
       by how far past the transposition went, each a section 5 expression over
       the cells the region names.  No other modulator asks for one: the
-      vibrato's step above the tuning's last note is measurably never observed,
+      vibrato's step above the tuning's last note is never reached in the trace,
       so the tuning simply has no interval there;
     * instruments 4 and 7 sound a **drum**, whose frequency is no pitch at all.
       That is a modulator on those instruments -- inline, self-contained, one

@@ -5,10 +5,10 @@ from pathlib import Path
 
 import pytest
 
-from deity_informant.tuneprog import pipeline
-from deity_informant.tuneprog.ir import Const, Let, Load, Tuneprog
-from deity_informant.tuneprog.machine import Refusal
-from deity_informant.tuneprog.tracedata import Trace, merge
+from tuneprog import pipeline
+from tuneprog.ir import Const, Let, Load, Tuneprog
+from tuneprog.machine import Refusal
+from tuneprog.tracedata import Trace, merge
 
 from _asm import asm, psid
 from _prog import PLAY

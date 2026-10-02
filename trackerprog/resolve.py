@@ -12,10 +12,10 @@ from __future__ import annotations
 
 import networkx as nx
 
-from ..tuneprog.accguard import _domsets, guardpath
-from ..tuneprog.graph import cfg, idoms
-from ..tuneprog.ir import Bin, Call, Const, Let, Load, Phi, R16, REGVAR, Return, Store, Var, W16
-from ..tuneprog.nodes import At, Ret, Sel  # noqa: F401 -- re-exported
+from tuneprog.accguard import _domsets, guardpath
+from tuneprog.graph import cfg, idoms
+from tuneprog.ir import Bin, Call, Const, Let, Load, Phi, R16, REGVAR, Return, Store, Var, W16
+from tuneprog.nodes import At, Ret, Sel  # noqa: F401 -- re-exported
 
 DEPTH = 6
 MAXALTS = 16

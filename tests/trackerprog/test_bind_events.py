@@ -1,8 +1,8 @@
 """B7's events: T2's cursor nest as section 3.6 rows, and what a masked score byte is."""
 
 from _bound import C, CMD, INSC, NOTE, ORDPOS, SWEEP, TIMER, V, binder, other, reader
-from deity_informant.trackerprog import events
-from deity_informant.tuneprog.ir import Bin, Block, Load, Proc, Return, Store
+from trackerprog import events
+from tuneprog.ir import Bin, Block, Load, Proc, Return, Store
 
 
 def visit(seq, x, cmds, temps):

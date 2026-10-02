@@ -2,10 +2,10 @@
 
 import re
 
-from deity_informant.tuneprog.ir import Bin, Block, Const, Goto, If, Let, Load, Proc
-from deity_informant.tuneprog.ir import Return, Store, Tuneprog, Var
-from deity_informant.tuneprog.live import coalesce, dead
-from deity_informant.tuneprog.cells import forward
+from tuneprog.ir import Bin, Block, Const, Goto, If, Let, Load, Proc
+from tuneprog.ir import Return, Store, Tuneprog, Var
+from tuneprog.live import coalesce, dead
+from tuneprog.cells import forward
 
 from _asm import asm
 from _prog import PLAY, printed

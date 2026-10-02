@@ -1,6 +1,6 @@
 # tuneprog — architecture
 
-The canonical reference for `deity_informant/tuneprog/`: what a tuneprog is, how a
+The canonical reference for `tuneprog/`: what a tuneprog is, how a
 `.sid` becomes one, what is certified about it, and where every part of it lives.
 Read this first; the records below are read after it, never instead of it.
 
@@ -666,7 +666,7 @@ voice` is Follin's raw cross-voice register list and JCH's non-constant clear
 
 ### 6.0.0 The trackerprog layer (T2, T3)
 
-`deity_informant/trackerprog/` lifts the certified artefacts one layer up; the
+`trackerprog/` lifts the certified artefacts one layer up; the
 schema, the player and the acceptance are
 [prototype-trackerprog.md](prototype-trackerprog.md) and nothing here repeats
 them. Two tools, neither a pipeline stage: `tools/tuneprog_score.py` writes
@@ -758,10 +758,10 @@ and `tools/tuneprog_recert.py` is green before and after.
 
 ## 7. CLI and tools
 
-### 7.1 `deity-informant tuneprog`
+### 7.1 `tuneprog`
 
 ```bash
-deity-informant tuneprog TUNE.sid --out DIR \
+tuneprog TUNE.sid --out DIR \
     [--song N | --songs all] [--calls N | --seconds S | --until-period] \
     [--max-calls N] [--sid-model 6581|8580] [--no-merge] \
     [--closure trace|static] [--resume] [--budget S] [--chunk N] \
@@ -824,7 +824,7 @@ until python3 tools/tuneprog_recert.py --out out/recert --resume; do :; done
 | `tools/survey/tuneprog_report.py` | 425 | the tables of [survey-tuneprog.md](survey-tuneprog.md) |
 
 Every tune the certificates, tools and tests name lives once in
-`deity_informant/tuneprog/tunes.py`: a certificate's `tune` field is a basename,
+`tuneprog/tunes.py`: a certificate's `tune` field is a basename,
 that map's key, and `tunes.resolve` finds the file under `$HVSC` or in the
 `$DEITY_ORACLE_CACHE/hvsc` fetch cache. Tunes are copyright works and are never
 committed; a hermetic test refuses an HVSC path written anywhere else.
@@ -832,8 +832,8 @@ committed; a hermetic test refuses an HVSC path written anywhere else.
 ### 7.3 Python API
 
 ```python
-from deity_informant.tuneprog import pipeline, printer, verify
-from deity_informant.tuneprog.tracedata import Trace
+from tuneprog import pipeline, printer, verify
+from tuneprog.tracedata import Trace
 
 trace = Trace.load("out/tune")                            # S0/S1 already run
 prog, regions, procs = pipeline.build(trace, "TUNE.sid")  # S2..S4: the certified program
@@ -948,7 +948,7 @@ belongs to:
 | families | defMON (*Automatas*, both SID models), Hubbard (*Commando* 1–2), Follin (*Ghouls'n'Ghosts*, 32 subtunes + the union), GoatTracker 2 ×2, SID Wizard ×2, JCH V20 ×3 (including the two-entry *Easy Does It*), installed-handler ×2 (*Jodler*, *Playful Professor*), dead-NMI ×2 (*Alien 3*, *Jazzpjazz*), patched-dispatch ×2 (*Experiment Zeta*, *Deflektor*), Blackbird (*Quintessence*), Walker (*Chameleon*, 2× speed), Galway (*Comic Bakery*, all 14 subtunes) |
 | refused by design | a CIA #2 source with no schedule (TOD alarm, serial, FLAG, CNT timer): 6 of 7,023 |
 | survey | 7,023-tune stratified sample at 30 s: **91.2 % of HVSC by weight certifies** (76.7 % raw), 2.5 % diverges, 6.2 % refused with a diagnosis, 0.26 % crashes; `--until-period` over 1,338: 99.4 % of certified programs complete by weight ([survey-tuneprog.md](survey-tuneprog.md)) |
-| code | `deity_informant/tuneprog/`, 69 modules, 20,663 lines, the largest 511; 917 hermetic + 203 HVSC + 10 oracle tests, 94 % coverage; SSA 1.0–1.6 statements per instruction |
+| code | `tuneprog/`, 69 modules, 20,663 lines, the largest 511; 917 hermetic + 203 HVSC + 10 oracle tests, 94 % coverage; SSA 1.0–1.6 statements per instruction |
 | baseline | the Ghidra high-P-Code export with SMC context ([ghidra-highpcode-export.md](ghidra-highpcode-export.md)), 8.3–16.5× our S4 — a baseline, not core. The three Ghidra oracles run nightly over all 54 certificates: 54 exports, the emulator agreeing with every one, no `ERROR` row, and the 6 standing `ours_bigger` flags carried as `--known` ([tuneprog-backlog.md](tuneprog-backlog.md) §2.6), so the gate is clean. Beside it the `sidplayfp` grid oracle |
 | merged PRs | #225–#286, one stage each, every one on green CI with recert reproduced |
 
@@ -1081,7 +1081,7 @@ record — is [tuneprog-backlog.md](tuneprog-backlog.md) §3; the open work by l
 
 ## 10. Module map
 
-`deity_informant/tuneprog/`, 61 modules, 17,922 lines, none over 500
+`tuneprog/`, 61 modules, 17,922 lines, none over 500
 (`pipeline.py` is the longest at 494). Line counts from `wc -l` at this commit.
 
 **Front end — S0/S1, the traced machine**

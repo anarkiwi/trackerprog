@@ -29,7 +29,7 @@ from __future__ import annotations
 from collections import Counter
 from dataclasses import dataclass, field
 
-from ..lifter import OPS
+from deity_informant.lifter import OPS
 from .ir import REG_NAMES
 from .machine import Refusal
 
@@ -165,7 +165,7 @@ def _writer_variants(trace, pc, ops):
     """Byte values a writer stored into the opcode cell at ``pc`` that never executed.
 
     Every byte decodes (the lifter covers all 256 NMOS opcodes), so each is an arm;
-    they are unverified because no execution of that variant was observed.
+    they are unverified because no execution of that variant was traced.
     """
     return sorted(v for v in trace.cell_values.get(pc, ()) if v not in ops)
 
@@ -221,7 +221,7 @@ def _cfg_node(trace, pc, op, out, keys, tails, lifted, idle=None):
     arms = branch_arms(ls, site, pc, op)
     if arms is not None:
         # Both directions of an executed branch are nodes; a direction the trace
-        # never took is a trap (the trace-closed product of architecture section 2). A
+        # never followed is a trap (the trace-closed product of architecture section 2). A
         # branch whose offset byte is an SMC cell keeps its condition and dispatches
         # on the targets its observed offsets name and the trace reached.
         seen = {t for t, _k in flow}

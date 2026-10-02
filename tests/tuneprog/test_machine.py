@@ -3,9 +3,9 @@
 import pytest
 
 from deity_informant import PcodeVM, lift
-from deity_informant.tuneprog import machine
-from deity_informant.tuneprog.cia import CIA, CIA1_BASE, ICR_TA
-from deity_informant.tuneprog.machine import (
+from tuneprog import machine
+from tuneprog.cia import CIA, CIA1_BASE, ICR_TA
+from tuneprog.machine import (
     Entry,
     MachineImage,
     Refusal,
@@ -271,7 +271,7 @@ def test_an_unsettled_port_takes_the_installed_vector_over_the_live_one():
 def _settled(*init_lines):
     """``(the guessed entry, the entry the traced machine settles on)``."""
     pytest.importorskip("pysidtracker")
-    from deity_informant.tuneprog.trace import Tracer  # pylint: disable=C0415
+    from tuneprog.trace import Tracer  # pylint: disable=C0415
 
     blocks = {0x1000: asm(0x1000, *init_lines, "RTS"), 0x2000: asm(0x2000, "RTI")}
     img, sched = find_entries(psid(blocks, 0x1000, 0x0000, speed=1))
@@ -290,7 +290,7 @@ def test_the_settle_refuses_a_vector_the_port_init_left_forbids():
 def test_a_play_routine_that_moves_the_port_refuses_at_the_next_tick():
     """The frame is the tick's contract, so the dispatch it implies holds at every tick."""
     pytest.importorskip("pysidtracker")
-    from deity_informant.tuneprog.trace import Tracer  # pylint: disable=C0415
+    from tuneprog.trace import Tracer  # pylint: disable=C0415
 
     blocks = {
         0x1000: asm(0x1000, *RAW_VEC, "RTS"),

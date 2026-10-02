@@ -7,8 +7,8 @@ epilogue pops the machine's own three bytes and the tick reaches its ``RTI``.
 
 import pytest
 
-from deity_informant.tuneprog import frames
-from deity_informant.tuneprog.machine import frame_slots
+from tuneprog import frames
+from tuneprog.machine import frame_slots
 
 from _hvsc import JODLER, PROFESSOR, decompiled
 

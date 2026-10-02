@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from collections import Counter
 
-from ..tuneprog.acchist import Cells
-from ..tuneprog.accshape import Ctx
-from ..tuneprog.ir import Bin, Const, Var, evalbin
+from tuneprog.acchist import Cells
+from tuneprog.accshape import Ctx
+from tuneprog.ir import Bin, Const, Var, evalbin
 from . import pitch, score, streams
 from .cursors import accesses, copies, strides
 from .resolve import Program

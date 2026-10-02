@@ -20,8 +20,8 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(ROOT / "tests" / "tuneprog"))
 
 import _pipeline as SYNTH  # noqa: E402
-from deity_informant.trackerprog import sizes  # noqa: E402
-from deity_informant.trackerprog.passes import (  # noqa: E402
+from trackerprog import sizes  # noqa: E402
+from trackerprog.passes import (  # noqa: E402
     ir,
     l1_structure,
     l2_phases,
@@ -30,13 +30,13 @@ from deity_informant.trackerprog.passes import (  # noqa: E402
     l5_select,
     l6_canon,
 )
-from deity_informant.trackerprog.passes.l6_reads import (  # noqa: E402
+from trackerprog.passes.l6_reads import (  # noqa: E402
     elsewhere,
     order,
     rowat,
     written,
 )
-from deity_informant.trackerprog.shape import _reads  # noqa: E402
+from trackerprog.shape import _reads  # noqa: E402
 
 TICKS = SYNTH.TICKS
 FETCH = ("fetch", "wrap", "key")

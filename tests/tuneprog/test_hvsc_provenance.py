@@ -11,8 +11,8 @@ from collections import Counter
 import pytest
 
 from deity_informant import cli
-from deity_informant.tuneprog import pipeline, printer, provenance
-from deity_informant.tuneprog.facts import GLOBAL_REG, VOICE_REG
+from tuneprog import pipeline, printer, provenance
+from tuneprog.facts import GLOBAL_REG, VOICE_REG
 
 from _hvsc import EMOMYST, GULDKORN, LINUS, decompiled, tune
 

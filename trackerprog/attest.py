@@ -13,8 +13,8 @@ register (section 2).
 
 from __future__ import annotations
 
-from ..tuneprog import grid
-from ..tuneprog.facts import SID_VOICE
+from tuneprog import grid
+from tuneprog.facts import SID_VOICE
 from .universal import render
 
 COMPARED = (

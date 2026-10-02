@@ -7,7 +7,7 @@ commands spent at the fetch rather than held for the boundary, and a register of
 the tune's one global channel written by the voice whose write-out sends it.
 """
 
-from deity_informant.trackerprog.universal import REG, Player, chipreg, render
+from trackerprog.universal import REG, Player, chipreg, render
 
 # a one-voice image: the registers the write-out runs, named as the object names them
 FLUSH = ["v0.%s" % k for k in REG]

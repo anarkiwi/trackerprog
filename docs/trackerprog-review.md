@@ -1,6 +1,6 @@
 # trackerprog — a critical review of the machine and the spec
 
-Reviewed 2026-09-02 against `main` at #333: `deity_informant/trackerprog/`
+Reviewed 2026-09-02 against `main` at #333: `trackerprog/`
 (`universal.py`, then 1,527 lines), §2–§9 of
 [prototype-trackerprog.md](prototype-trackerprog.md), and the nine hand
 transliterations in `tools/trackerprog_*.py` read as the thirty cached objects

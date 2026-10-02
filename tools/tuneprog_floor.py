@@ -18,12 +18,12 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 # pylint: disable=wrong-import-position
-from deity_informant.tuneprog import datablock, ir, pipeline  # noqa: E402
-from deity_informant.tuneprog.irwalk import addr_split, node_exprs, walk as ewalk  # noqa: E402
-from deity_informant.tuneprog.lift import lift_trace  # noqa: E402
-from deity_informant.tuneprog.live import needed, printable  # noqa: E402
-from deity_informant.tuneprog.structure import Blk, For, hidden, walk  # noqa: E402
-from deity_informant.tuneprog.tracedata import Trace  # noqa: E402
+from tuneprog import datablock, ir, pipeline  # noqa: E402
+from tuneprog.irwalk import addr_split, node_exprs, walk as ewalk  # noqa: E402
+from tuneprog.lift import lift_trace  # noqa: E402
+from tuneprog.live import needed, printable  # noqa: E402
+from tuneprog.structure import Blk, For, hidden, walk  # noqa: E402
+from tuneprog.tracedata import Trace  # noqa: E402
 
 KINDS = ("sid write", "16-bit half/carry", "index plumbing", "data", "control")
 

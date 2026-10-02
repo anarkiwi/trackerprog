@@ -1,7 +1,7 @@
 """S2 static closure: the unobserved arms of a patched jump or branch dispatch."""
 
-from deity_informant.tuneprog import jumptab
-from deity_informant.tuneprog.ir import (
+from tuneprog import jumptab
+from tuneprog.ir import (
     Bin,
     Block,
     Const,

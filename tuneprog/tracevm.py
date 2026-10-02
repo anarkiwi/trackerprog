@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from array import array
 
-from ..vm import PcodeVM
+from deity_informant.vm import PcodeVM
 from .ir import IO_HI, IO_LO, SID_HI, SID_LO, STACK_HI, STACK_LO
 from .cia import CIA, CIA1_BASE, CIA2_BASE
 from .machine import Refusal, port_bank

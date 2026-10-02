@@ -27,7 +27,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from ..lifter import OPS, C, lift
+from deity_informant.lifter import OPS, C, lift
 from .tracedata import site_key
 
 

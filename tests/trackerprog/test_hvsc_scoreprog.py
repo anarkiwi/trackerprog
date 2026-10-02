@@ -10,8 +10,8 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tuneprog"))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "tools"))
 
-from deity_informant.trackerprog.refuse import REASONS  # noqa: E402
-from deity_informant.tuneprog import pipeline  # noqa: E402
+from trackerprog.refuse import REASONS  # noqa: E402
+from tuneprog import pipeline  # noqa: E402
 
 import tuneprog_scoreprog as T3  # noqa: E402
 from _hvsc import COMMANDO, EMOMYST, GULDKORN, LINUS, tune_file  # noqa: E402

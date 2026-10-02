@@ -2,9 +2,9 @@
 
 import pytest
 
-from deity_informant.tuneprog import structure as S
-from deity_informant.tuneprog.interp import Interp, Machine
-from deity_informant.tuneprog.ir import (
+from tuneprog import structure as S
+from tuneprog.interp import Interp, Machine
+from tuneprog.ir import (
     Bin,
     Block,
     Const,
@@ -20,7 +20,7 @@ from deity_informant.tuneprog.ir import (
     Tuneprog,
     Var,
 )
-from deity_informant.tuneprog.verify import Reference, Verifier
+from tuneprog.verify import Reference, Verifier
 
 from _asm import asm
 from _prog import PLAY, counter, tuneprog

@@ -3,7 +3,7 @@
 Vertical slice of [tuneprog-architecture.md](tuneprog-architecture.md)
 against `MUSICIANS/G/Goto80/Automatas.sid` (Goto80, defMON export, 2013; anatomy
 [§3.7](playroutine-anatomy.md)), the hardest of the nine anatomy exemplars for
-this design. Real code in its final place (`deity_informant/tuneprog/`), generic
+this design. Real code in its final place (`tuneprog/`), generic
 by construction. Done when Automatas carries a **certificate**: per-call
 SID-write equivalence over the whole song plus the periodicity witness, printed
 in the shape of anatomy §3.7.7. Acceptance criteria E1–E13 and their measured
@@ -66,7 +66,7 @@ SMC inventory: §10. Printed-form reference: anatomy §3.7.3 and §3.7.7.
 
 ## 3. Scope
 
-Built, generic, in `deity_informant/tuneprog/`: S0–S8 (module map §4, stages §5),
+Built, generic, in `tuneprog/`: S0–S8 (module map §4, stages §5),
 with S5/S6 carried far enough to print Automatas readably.
 
 - Should-have: writer-derived enumeration of unobserved opcode-cell variants
@@ -94,7 +94,7 @@ with S5/S6 carried far enough to print Automatas readably.
 Layout as planned; as built, with line counts, in [tuneprog-architecture.md](tuneprog-architecture.md) §10.
 
 ```
-deity_informant/tuneprog/
+tuneprog/
   __init__.py
   machine.py    S0  MachineImage (power-on ⊕ load band), find_entries(), init_runner(), cadence, port/CIA hooks
   trace.py      S1  TraceVM(PcodeVM), run_trace(), Trace (+ save/load, resume)
@@ -108,7 +108,7 @@ deity_informant/tuneprog/
   recover.py    S6  strides→struct views, roles (sid image, freq table, cursor, pointer, timer), names
   emit.py       S7  Python codegen, pseudocode printer, certificate writer
   verify.py     S8  differential run vs reference log, periodicity, chunked/resumable
-  cli.py            `deity-informant tuneprog TUNE.sid --out DIR [--seconds S | --full] [--sid-model 6581|8580] [--resume]`
+  cli.py            `tuneprog TUNE.sid --out DIR [--seconds S | --full] [--sid-model 6581|8580] [--resume]`
 tests/tuneprog/   unit tests per module (assembled snippets) + end-to-end (marked)
 ```
 
@@ -266,7 +266,7 @@ count as divergences; chunked and resumable like the tracer.
 ## 6. Acceptance: evidence and results
 
 Certificates `docs/certificates/{automatas,automatas-6581,automatas-8580,commando-song1,commando-song2}.json`,
-from `tools/tuneprog_certify.py` (= `deity-informant tuneprog`), re-run against
+from `tools/tuneprog_certify.py` (= `tuneprog`), re-run against
 the committed traces after S5/S6 landed. E3–E9 are checked mechanically in
 `tests/tuneprog/test_automatas.py` against §10 and anatomy §3.7.
 

@@ -9,7 +9,7 @@ import json
 
 import pytest
 
-from deity_informant.trackerprog.universal import REGNAME, Player, render
+from trackerprog.universal import REGNAME, Player, render
 
 FLO, FHI, PLO, PHI, CTRL, AD, SR = 0, 1, 2, 3, 4, 5, 6
 CUT, RES, VOL = 22, 23, 24  # the numbers the writes carry; the object names them

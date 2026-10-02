@@ -7,7 +7,7 @@ register and no word past the tuning reads.
 
 from __future__ import annotations
 
-from ..tuneprog.graph import cfg, idoms, natural_loops, preds_of
+from tuneprog.graph import cfg, idoms, natural_loops, preds_of
 from . import emit, region, schedule, tables
 from .refuse import Refusal, Refused
 from .tree import body, kept, stmts

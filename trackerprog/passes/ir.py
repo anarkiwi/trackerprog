@@ -12,8 +12,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from ...tuneprog import grid
-from ...tuneprog.ir import TrapError
+from tuneprog import grid
+from tuneprog.ir import TrapError
 from .. import interp, region
 from ..attest import attest
 from .rir import render as _render

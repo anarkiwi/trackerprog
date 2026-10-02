@@ -16,7 +16,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 # pylint: disable=wrong-import-position
-from deity_informant.tuneprog import ghidra_compare, ghidra_facts  # noqa: E402
+from tuneprog import deity, ghidra_compare, ghidra_facts  # noqa: E402
+
+deity.on_path()
 from examples.hello_world import EXPECTED, ORG, PROGRAM, STA_PC  # noqa: E402
 
 HELLO_END = 0x1013  # first data byte; $1000..$1012 is code

@@ -4,7 +4,7 @@
 // Usage (see run.sh): analyzeHeadless ... -noanalysis -postScript
 //   ExportHighPcode.java <factsDir> <outDir>
 // factsDir holds ghidra_facts.json + image_post_init.bin as written by
-// deity_informant.tuneprog.ghidra_facts. SMC cell addresses become contextreg
+// tuneprog.ghidra_facts. SMC cell addresses become contextreg
 // values, so the SLEIGH constructors that read an operand from the instruction's
 // own bytes fire and self-modified operands decompile as globals.
 //@category deity-informant

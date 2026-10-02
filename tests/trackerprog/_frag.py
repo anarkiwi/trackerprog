@@ -5,7 +5,7 @@ table and the chip at its own stride -- and the constructors the six idiom test
 files build their fragments with.
 """
 
-from deity_informant.tuneprog.ir import (
+from tuneprog.ir import (
     Bin,
     Block,
     Const,
@@ -20,7 +20,7 @@ from deity_informant.tuneprog.ir import (
     Tuneprog,
     Var,
 )
-from deity_informant.tuneprog.recover import Names
+from tuneprog.recover import Names
 
 FREQ, FREQLO, FREQHI = 0x2000, 0x2600, 0x2700
 NOTE, INS, TIMER, ORDPOS, CURSOR, ACC, DIR = (

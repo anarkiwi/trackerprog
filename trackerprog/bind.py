@@ -12,9 +12,9 @@ the row rather than becoming a cell of the object.
 
 from __future__ import annotations
 
-from ..tuneprog.graph import rpo, succs
-from ..tuneprog.ir import Let, Load, Store
-from ..tuneprog.irwalk import addr_split
+from tuneprog.graph import rpo, succs
+from tuneprog.ir import Let, Load, Store
+from tuneprog.irwalk import addr_split
 from . import build, emit, record, region, schedule, sections, tables
 from .cells import Cells
 from .events import Score, _same, _scorecells, fields_of, masks_of, terms_of, tie_of

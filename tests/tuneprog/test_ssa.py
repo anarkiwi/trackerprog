@@ -5,11 +5,11 @@ import pytest
 
 import deity_informant as P
 from deity_informant.lifter import MODE_LEN, OPS
-from deity_informant.tuneprog import ir, ssa
-from deity_informant.tuneprog.lower import ops_to_stmts
-from deity_informant.tuneprog.idioms import rewrite
-from deity_informant.tuneprog.interp import Interp, Machine
-from deity_informant.tuneprog.ir import (
+from tuneprog import ir, ssa
+from tuneprog.lower import ops_to_stmts
+from tuneprog.idioms import rewrite
+from tuneprog.interp import Interp, Machine
+from tuneprog.ir import (
     Bin,
     Block,
     Const,
@@ -21,13 +21,14 @@ from deity_informant.tuneprog.ir import (
     Return,
     Var,
 )
-from deity_informant.tuneprog.irwalk import single_defs
-from deity_informant.tuneprog.verify import verify
+from tuneprog.irwalk import single_defs
+from tuneprog.verify import verify
 
-import _common as H
 from _prog import PLAY, counter, tuneprog
 from _asm import asm
 from test_ir import STRAIGHT
+
+PC = 0x0800
 
 REGS = tuple(range(16))
 NAMES = tuple(ir.REGVAR[i] for i in REGS)
@@ -47,17 +48,17 @@ def _rand_block(rng, mem, pc, tag, n):
 
 def _rand_proc(rng, mem):
     """A diamond CFG over random instructions: the shape that needs phi nodes."""
-    pc = H.PC
+    pc = PC
     a, pc = _rand_block(rng, mem, pc, "a", 2)
     b, pc = _rand_block(rng, mem, pc, "b", 2)
     c, pc = _rand_block(rng, mem, pc, "c", 2)
     d, pc = _rand_block(rng, mem, pc, "d", 1)
     ret = Return(tuple(Var(n) for n in NAMES))
     blocks = {
-        "A": Block("A", a, If(Bin("==", Var("C"), Const(1)), "B", "C"), H.PC),
-        "B": Block("B", b, Goto("D"), H.PC),
-        "C": Block("C", c, Goto("D"), H.PC),
-        "D": Block("D", d, ret, H.PC),
+        "A": Block("A", a, If(Bin("==", Var("C"), Const(1)), "B", "C"), PC),
+        "B": Block("B", b, Goto("D"), PC),
+        "C": Block("C", c, Goto("D"), PC),
+        "D": Block("D", d, ret, PC),
     }
     return ir.Tuneprog(procs={"f": Proc("f", REGS, REGS, blocks, "A")})
 

@@ -1,7 +1,7 @@
 """S6 16-bit views: the cell pair, the byte shapes over it, and the pass that folds them."""
 
-from deity_informant.tuneprog import halves
-from deity_informant.tuneprog.ir import Bin, Const, Load, R16, Store, W16
+from tuneprog import halves
+from tuneprog.ir import Bin, Const, Load, R16, Store, W16
 
 from _asm import asm
 from _prog import PLAY, printed, proc_body, stmts, tuneprog

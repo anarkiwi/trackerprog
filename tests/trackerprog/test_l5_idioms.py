@@ -11,8 +11,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tuneprog"))
 
-from deity_informant.trackerprog.passes import expand, l5_select, rir  # noqa: E402
-from deity_informant.trackerprog.universal import render  # noqa: E402
+from trackerprog.passes import expand, l5_select, rir  # noqa: E402
+from trackerprog.universal import render  # noqa: E402
 
 TICKS = 24
 

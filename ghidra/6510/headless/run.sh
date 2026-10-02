@@ -1,16 +1,16 @@
 #!/bin/sh
-# Ghidra headless integration tests + facts-driven high P-Code export for the
-# 6510 SLEIGH module.
+# Ghidra headless oracles for tuneprog: facts-driven high P-Code export and
+# P-Code emulation over deity-informant's 6510 SLEIGH module.
 #
-#   run.sh              -- the smoke tests (illegal decode, hello-world SMC export,
-#                          complexity/coverage oracle, semantic oracle, the IRQ
-#                          frame, the banking gate)
+#   run.sh              -- the smoke tests (hello-world SMC export, complexity/
+#                          coverage oracle, semantic oracle, the IRQ frame, the
+#                          banking gate)
 #   run.sh oracles      -- export and emulate $FACTS_DIR into $OUT_DIR, one session
 #   run.sh export       -- the high P-Code export alone
 #   run.sh emulate      -- the semantic oracle alone
 #
 # Requires: GHIDRA_INSTALL_DIR set, the 6510 module installed into it
-# (build.py --install), deity_informant importable. See Dockerfile.ghidra.
+# (deity-informant's build.py --install), tuneprog importable. See Dockerfile.ghidra.
 set -eu
 
 : "${GHIDRA_INSTALL_DIR:?set GHIDRA_INSTALL_DIR to a Ghidra install}"
@@ -49,22 +49,7 @@ esac
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 
-# 1. the illegal-opcode decode smoke test (unchanged)
-python3 examples/hello_world.py --write "$WORK/hello.prg"
-OUT="$WORK/headless.log"
-"$HEADLESS" "$WORK" hello \
-    -import "$WORK/hello.prg" \
-    -loader BinaryLoader -loader-baseAddr 0x1000 \
-    -processor "6510:LE:16:default" \
-    -noanalysis \
-    -scriptPath ghidra/6510/headless -postScript DumpPcode.java \
-    -deleteProject 2>&1 | tee "$OUT"
-
-grep -q "PCODE-INTEGRATION-OK" "$OUT" || fail "OK marker missing (see log above)"
-grep -qi "INSN 1002 LAX" "$OUT" || fail "LAX did not decode at \$1002"
-grep -qi "INSN 100C ISC" "$OUT" || fail "ISC did not decode at \$100C"
-echo "GHIDRA HEADLESS INTEGRATION: PASS (6510 decoded LAX+ISC under Ghidra headless)"
-
+# 1. the hello-world demo's facts, exported and emulated in one session
 python3 tools/tuneprog_ghidra.py --demo hello "$WORK/facts"
 headless "$WORK/p2" "$WORK/facts" "$WORK/out" "$WORK/export.log" oracles
 

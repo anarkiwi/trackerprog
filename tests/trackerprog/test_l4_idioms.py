@@ -30,14 +30,14 @@ from _frag import (  # noqa: E402
     store,
     voiceblocks,
 )
-from deity_informant.trackerprog.passes import (  # noqa: E402
+from trackerprog.passes import (  # noqa: E402
     l1_structure,
     l2_phases,
     l3_roles,
     l4_specialise,
 )
-from deity_informant.trackerprog.passes.ir import validate  # noqa: E402
-from deity_informant.tuneprog.ir import Bin, Block, Goto, If, Let, Load, Proc  # noqa: E402
+from trackerprog.passes.ir import validate  # noqa: E402
+from tuneprog.ir import Bin, Block, Goto, If, Let, Load, Proc  # noqa: E402
 
 TICKS = 24
 

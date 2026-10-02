@@ -54,9 +54,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 # pylint: disable=wrong-import-position
 from deity_informant.lifter import lift  # noqa: E402
-from deity_informant.trackerprog import printer  # noqa: E402
-from deity_informant.trackerprog.attest import attest  # noqa: E402
-from deity_informant.trackerprog.universal import render  # noqa: E402
+from trackerprog import printer  # noqa: E402
+from trackerprog.attest import attest  # noqa: E402
+from trackerprog.universal import render  # noqa: E402
 from deity_informant.vm import PcodeVM, run_sub  # noqa: E402
 
 CYCLES = 19656  # PAL, single speed: the player is a bare JSR per frame
@@ -499,7 +499,7 @@ def blocks(seq):
 def order_op(seq, s, row, index):
     """A control byte as one step of section 3.6's order grammar.
 
-    ``Next`` names only where the loop goes when its count is spent: where it
+    ``Next`` names only where the loop goes when its count is exhausted: where it
     goes when the count survives is the mark's, which ``mark`` already said and
     the player's own counted register decides.
     """
@@ -526,7 +526,7 @@ def order_op(seq, s, row, index):
 
 
 def events(blk, commands):
-    """One block's rows as section 3.6 events, its loads spent by section 6."""
+    """One block's rows as section 3.6 events, its loads consumed by section 6."""
     out = []
     for _s, row in blk["rows"]:
         kind = row.get("kind")
@@ -827,7 +827,7 @@ def accs():
     flags rather than guards on the cells, because a cell an earlier arm moved is
     not the cell the arm was chosen on: **an arm that steps ends the generator**
     (the source leaves by ``JMP``, so the next segment does not also run on the
-    tick this one spent its counter), and **a reload does not** -- which is the
+    tick this one exhausted its counter), and **a reload does not** -- which is the
     ``while`` the source writes as one loop, and why the reload arms rank below
     the segments and above nothing.
     """

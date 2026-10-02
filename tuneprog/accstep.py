@@ -11,7 +11,7 @@ from collections import namedtuple
 
 import numpy as np
 
-from ..trackerprog.resolve import Program, walkx
+from trackerprog.resolve import Program, walkx
 from .accdelta import _cellref
 from .accdelta import unscratch as tabfree
 from .accguard import cellof, valnames

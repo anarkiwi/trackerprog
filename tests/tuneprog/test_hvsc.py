@@ -10,8 +10,8 @@ import pytest
 
 from deity_informant import PcodeVM, c64, lift, run_sub
 from deity_informant.lifter import ILLEGAL_OPCODES
-from deity_informant.tuneprog.cfg import procs_json
-from deity_informant.tuneprog.regions import index_regions
+from tuneprog.cfg import procs_json
+from tuneprog.regions import index_regions
 
 from _hvsc import AUTOMATAS, COMMANDO, front_end, tune
 

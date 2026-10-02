@@ -2,11 +2,11 @@
 
 import pytest
 
-from deity_informant.tuneprog import ssa
-from deity_informant.tuneprog.idioms import compound_hints, fold, inline, overflow_of, rewrite
-from deity_informant.tuneprog.idioms import sext_of, width
-from deity_informant.tuneprog.ir import Bin, Block, Const, If, Let, Load, Proc, Return, Store, Var
-from deity_informant.tuneprog.verify import verify
+from tuneprog import ssa
+from tuneprog.idioms import compound_hints, fold, inline, overflow_of, rewrite
+from tuneprog.idioms import sext_of, width
+from tuneprog.ir import Bin, Block, Const, If, Let, Load, Proc, Return, Store, Var
+from tuneprog.verify import verify
 
 from _asm import asm
 from _prog import PLAY, tuneprog

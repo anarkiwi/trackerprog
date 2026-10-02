@@ -1,10 +1,10 @@
 """S7 data section: a table's reach, the layout its view knows, and its accessors."""
 
-from deity_informant.tuneprog import datablock as D
-from deity_informant.tuneprog.ir import Bin, Block, Const, Let, Load, Proc, Rgn, Store, Tuneprog
-from deity_informant.tuneprog.ir import Var, W16
-from deity_informant.tuneprog import pipeline
-from deity_informant.tuneprog.recover import Names
+from tuneprog import datablock as D
+from tuneprog.ir import Bin, Block, Const, Let, Load, Proc, Rgn, Store, Tuneprog
+from tuneprog.ir import Var, W16
+from tuneprog import pipeline
+from tuneprog.recover import Names
 
 from _asm import asm
 from _prog import PLAY, printed, tuneprog

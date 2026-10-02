@@ -16,10 +16,10 @@ from __future__ import annotations
 
 from collections import deque
 
-from ..lifter import STATUS_BITS
-from ..tuneprog import grid
-from ..tuneprog.graph import EXIT
-from ..tuneprog.ir import (
+from deity_informant.lifter import STATUS_BITS
+from tuneprog import grid
+from tuneprog.graph import EXIT
+from tuneprog.ir import (
     Bin,
     Call,
     Const,
@@ -39,7 +39,7 @@ from ..tuneprog.ir import (
     evalbin,
     hits_band,
 )
-from ..tuneprog.machine import STATUS, entry_frame
+from tuneprog.machine import STATUS, entry_frame
 
 DEFAULT_ORDER = ("ad", "sr", "ctrl")
 

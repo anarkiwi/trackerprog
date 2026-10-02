@@ -1,0 +1,11 @@
+.git
+**/__pycache__
+*.pyc
+*.egg-info
+.pytest_cache
+.venv
+.oracle-cache*
+.sweep-cache
+.hypothesis
+.coverage
+out

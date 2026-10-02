@@ -9,7 +9,7 @@ Public API: :func:`ops_to_stmts`, :func:`straightline`, :class:`Storage`.
 
 from __future__ import annotations
 
-from ..lifter import STATUS_BITS
+from deity_informant.lifter import STATUS_BITS
 from .ir import Bin, Block, Const, IO_HI, IO_LO, Let, Load, Proc, REGVAR, Return, Store, Var
 from .ir import STACK_LO, STACK_HI
 from .regions import index_regions

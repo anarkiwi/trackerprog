@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from deity_informant.tuneprog import grid
+from tuneprog import grid
 
 from _asm import asm, trace_prog
 
@@ -195,8 +195,8 @@ def test_the_change_rule_keeps_exactly_the_writes_the_register_file_did_not_hold
 def test_a_cached_oracle_trace_is_keyed_by_the_render_length(tmp_path, monkeypatch):
     """A trace is only as long as the render that made it, so the length is the key.
 
-    Two callers ask for one tune at two lengths -- the grid oracle at 62 seconds
-    and the cadence oracle at 20 -- and keying on the tune alone let whichever
+    Two callers ask for one tune at two lengths -- the grid oracle at ``seconds=62``
+    and the cadence oracle at ``seconds=20`` -- and keying on the tune alone let whichever
     ran first decide, silently answering the long request with the short trace
     (Commando's 20 s render is 1,002 frames against the 3,000 the grid asks for).
     """

@@ -11,8 +11,8 @@ from __future__ import annotations
 
 import operator
 
-from ..tuneprog.ir import Bin, Const, Store, Var, evalbin
-from ..tuneprog.irwalk import addr_split, walk
+from tuneprog.ir import Bin, Const, Store, Var, evalbin
+from tuneprog.irwalk import addr_split, walk
 from .read import Unlowerable
 
 
@@ -87,8 +87,8 @@ class Score:
         """``(orders, patterns)``: the visits as per-voice play lists of events.
 
         A visit belongs to the step of the order program the tune's own cursor was
-        on, so the play list is the score's own list and not the walk the horizon
-        took: a second turn of the same step is the same step (§3.6).
+        on, so the play list is the score's own list and not the walk over the
+        horizon: a second turn of the same step is the same step (§3.6).
         """
         orders, pats = [], {}
         for v in range(self.voices):

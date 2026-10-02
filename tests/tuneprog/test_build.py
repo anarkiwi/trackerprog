@@ -2,13 +2,13 @@
 
 import pytest
 
-from deity_informant.tuneprog.ir import Call, Switch, Trap
-from deity_informant.tuneprog.irwalk import callees
-from deity_informant.tuneprog.verify import Reference, Verifier, verify
+from tuneprog.ir import Call, Switch, Trap
+from tuneprog.irwalk import callees
+from tuneprog.verify import Reference, Verifier, verify
 
 from _asm import asm
 from _prog import PLAY, front, stack_access, tuneprog
-from deity_informant.tuneprog.build import build_ir
+from tuneprog.build import build_ir
 
 
 def _terms(prog, kind):

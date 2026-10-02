@@ -34,16 +34,16 @@ sys.path.insert(0, str(ROOT / "tools" / "survey"))
 # first: importing the sweep pins the BLAS thread counts, ahead of numpy
 from tuneprog_sweep import MORE, _fault, _timeout, _todo, worker_limits  # noqa: E402
 from tuneprog_report import population  # noqa: E402
-from deity_informant.tuneprog import nmi as N  # noqa: E402
-from deity_informant.tuneprog.ir import SID_HI, SID_LO  # noqa: E402
-from deity_informant.tuneprog.cia import CIA2_BASE  # noqa: E402
-from deity_informant.tuneprog.machine import (  # noqa: E402
+from tuneprog import nmi as N  # noqa: E402
+from tuneprog.ir import SID_HI, SID_LO  # noqa: E402
+from tuneprog.cia import CIA2_BASE  # noqa: E402
+from tuneprog.machine import (  # noqa: E402
     Entry,
     MachineImage,
     Refusal,
     find_entries,
 )
-from deity_informant.tuneprog.trace import IDLE_INDEX, Tracer  # noqa: E402
+from tuneprog.trace import IDLE_INDEX, Tracer  # noqa: E402
 from report import Rates  # noqa: E402
 
 CIA2_HI = CIA2_BASE + 0xFF

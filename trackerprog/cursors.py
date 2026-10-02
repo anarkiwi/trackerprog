@@ -13,10 +13,10 @@ from collections import Counter, namedtuple
 
 import numpy as np
 
-from ..tuneprog.accshape import terms
-from ..tuneprog.facts import elem_count
-from ..tuneprog.ir import Bin, Const, Load, R16, Var
-from ..tuneprog.irwalk import addr_split, node_exprs, reachable, walk
+from tuneprog.accshape import terms
+from tuneprog.facts import elem_count
+from tuneprog.ir import Bin, Const, Load, R16, Var
+from tuneprog.irwalk import addr_split, node_exprs, reachable, walk
 from .resolve import Program, free, walkx
 
 TABLE = ("const", "init_constant")

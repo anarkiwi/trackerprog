@@ -25,7 +25,7 @@ import time
 
 import numpy as np
 
-from ..lifter import STATUS_BITS
+from deity_informant.lifter import STATUS_BITS
 from .emit import PyProgram, certificate
 from . import grid
 from .interp import Interp, Machine, NmiMachine
@@ -387,9 +387,8 @@ class Verifier:
                 self.period is not None
                 and self.first_repeat is not None
                 and self.div is None
-                and done > self.first_repeat
                 and self.period == tperiod
-                and self.first_repeat == tfirst
+                and tfirst == self.first_repeat < done
             ),
             "closure": (
                 "static" if (self.prog.meta.get("static_closure") or {}).get("closed") else "trace"

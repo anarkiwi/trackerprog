@@ -7,14 +7,14 @@ from tempfile import mkdtemp
 import numpy as np
 import pytest
 
-from deity_informant.tuneprog import accreg, accum, accshape, graph, pipeline
-from deity_informant.tuneprog import provenance
-from deity_informant.tuneprog.accshape import canon, sext_split, step, terms
-from deity_informant.tuneprog.facts import Facts
-from deity_informant.tuneprog.history import history
-from deity_informant.tuneprog.ir import Bin, Const, Load, Tuneprog, Var, succs
-from deity_informant.tuneprog.recover import Names
-from deity_informant.tuneprog.tracedata import Trace
+from tuneprog import accreg, accum, accshape, graph, pipeline
+from tuneprog import provenance
+from tuneprog.accshape import canon, sext_split, step, terms
+from tuneprog.facts import Facts
+from tuneprog.history import history
+from tuneprog.ir import Bin, Const, Load, Tuneprog, Var, succs
+from tuneprog.recover import Names
+from tuneprog.tracedata import Trace
 
 from _asm import asm
 from _hvsc import COMMANDO, EMOMYST, GULDKORN, LINUS, tune_file

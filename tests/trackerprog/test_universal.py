@@ -3,7 +3,7 @@
 No tune, no HVSC: a small hand-written trackerprog per form -- the tempo
 divider, the note row, the keyoff, the tie, the prelude, and each accumulator
 delta/policy pair -- so every branch of
-:mod:`deity_informant.trackerprog.universal` is exercised by data alone.
+:mod:`trackerprog.universal` is exercised by data alone.
 """
 
 import pickle
@@ -14,9 +14,9 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "tools"))
 
-from deity_informant.trackerprog import printer  # noqa: E402
-from deity_informant.trackerprog.attest import attest, subsequences_agree  # noqa: E402
-from deity_informant.trackerprog.universal import Player, render  # noqa: E402
+from trackerprog import printer  # noqa: E402
+from trackerprog.attest import attest, subsequences_agree  # noqa: E402
+from trackerprog.universal import Player, render  # noqa: E402
 
 import trackerprog_commando as TC  # noqa: E402
 

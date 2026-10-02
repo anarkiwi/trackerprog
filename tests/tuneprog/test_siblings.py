@@ -10,7 +10,7 @@ import re
 
 import pytest
 
-from deity_informant.tuneprog import jumptab, pipeline, siblings
+from tuneprog import jumptab, pipeline, siblings
 
 from _asm import asm
 from _prog import PLAY, front, printed as _text, proc_body as _body, tuneprog

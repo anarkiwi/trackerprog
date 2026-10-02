@@ -19,8 +19,8 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(ROOT / "tools"))
 
 from _expansions import armed, armfor, bind, snippet  # noqa: E402
-from deity_informant.trackerprog.passes import expand, l5_select, rir  # noqa: E402
-from deity_informant.trackerprog.universal import render  # noqa: E402
+from trackerprog.passes import expand, l5_select, rir  # noqa: E402
+from trackerprog.universal import render  # noqa: E402
 
 import trackerprog_poison as TP  # noqa: E402
 

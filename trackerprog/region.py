@@ -12,10 +12,10 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from ..tuneprog.accguard import _domsets
-from ..tuneprog.graph import EXIT, cfg, idoms, natural_loops, postdoms, preds_of
-from ..tuneprog.ir import Call, If, Let, Load, Phi, Return, Store, Switch, Trap, Var, succs
-from ..tuneprog.irwalk import addr_split, node_exprs, reachable, walk
+from tuneprog.accguard import _domsets
+from tuneprog.graph import EXIT, cfg, idoms, natural_loops, postdoms, preds_of
+from tuneprog.ir import Call, If, Let, Load, Phi, Return, Store, Switch, Trap, Var, succs
+from tuneprog.irwalk import addr_split, node_exprs, reachable, walk
 from .refuse import Refusal
 
 

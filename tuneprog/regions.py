@@ -17,7 +17,7 @@ affine in X or Y (``LiftedSite.idx_ops``, so a ``(zp),Y`` pointer fetch carries
 no domain), falling back to the address spacing; ``fields`` are the accessors'
 base offsets modulo it, so a struct-of-arrays layout (stride 1) or a
 struct-of-code layout (stride 49) falls out of the trace. Each accessor keeps
-its observed extent (the envelope an indexed access must stay inside).
+its traced extent (the envelope an indexed access must stay inside).
 
 Public API: :func:`build_regions`, :func:`post_runs`, :func:`index_regions`,
 :class:`Region`.
@@ -28,7 +28,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from math import gcd
 
-from ..lifter import OPS
+from deity_informant.lifter import OPS
 from .ir import IO_HI, IO_LO, rgn_name
 from .tracevm import IDX_REG
 
@@ -229,7 +229,7 @@ def build_regions(trace, lifted=None, init_kind="init_constant", unite=()):
 
 
 def _origin(r):
-    """The address index 0 has: ``operand + minimum observed index`` (design S6).
+    """The address index 0 has: ``operand + minimum traced index`` (design S6).
 
     A 1-based table is read at ``base-1,Y`` with ``Y >= 1``, so its lowest operand
     lies one byte below the region; indexing from that origin prints the table's

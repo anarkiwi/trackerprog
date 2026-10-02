@@ -15,9 +15,9 @@ ROOT = HERE.parent.parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(ROOT / "tools"))
 
-from deity_informant.trackerprog import poison, sizes  # noqa: E402
-from deity_informant.trackerprog.passes import l6_canon  # noqa: E402
-from deity_informant.trackerprog.passes.ir import Level, validate  # noqa: E402
+from trackerprog import poison, sizes  # noqa: E402
+from trackerprog.passes import l6_canon  # noqa: E402
+from trackerprog.passes.ir import Level, validate  # noqa: E402
 
 import trackerprog_poison as TP  # noqa: E402
 

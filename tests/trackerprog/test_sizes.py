@@ -1,4 +1,4 @@
-"""Section 9.1's measurement, hermetic: the object against the tune's load band.
+"""Section 9.1's comparison, hermetic: the object against the tune's load band.
 
 No tune and no HVSC: a PSID file assembled here, so the band is bytes this test
 states, and the coverage rule -- a ratio over a fraction of a tune's subtunes is
@@ -9,7 +9,7 @@ objects cover.
 import json
 import struct
 
-from deity_informant.trackerprog import sizes
+from trackerprog import sizes
 
 
 def psid(body, load=0x1000, songs=1):

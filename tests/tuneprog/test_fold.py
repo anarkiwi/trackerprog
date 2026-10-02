@@ -4,10 +4,10 @@ import copy
 import random
 import re
 
-from deity_informant.tuneprog import tails, texture, unroll
-from deity_informant.tuneprog.graph import preds_of
-from deity_informant.tuneprog.interp import Interp, Machine
-from deity_informant.tuneprog.ir import (
+from tuneprog import tails, texture, unroll
+from tuneprog.graph import preds_of
+from tuneprog.interp import Interp, Machine
+from tuneprog.ir import (
     Bin,
     Block,
     Const,
@@ -146,7 +146,7 @@ def test_a_two_copy_run_whose_step_is_not_the_storage_stride_does_not_fold():
 
 
 def test_a_two_copy_run_of_one_statement_is_no_factoring():
-    """A header plus one body is no shorter than the two lines it replaces."""
+    """A header plus one body is no shorter than the two lines it stands for."""
     code = asm(
         PLAY,
         "init: LDY #$17",

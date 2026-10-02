@@ -2,7 +2,7 @@
 """Per-tick histories of every named cell of a decompiled tune, from its output directory.
 
 Replays the certified program against its own trace
-(:func:`deity_informant.tuneprog.history.history`), writes one array per name to
+(:func:`tuneprog.history.history`), writes one array per name to
 ``tuneprog.history.npz`` -- the S6 ``u16`` pairs widened alongside their bytes --
 and reports how many distinct values each name took. Nothing here is a pipeline
 artefact: the tuneprog files are read, never written.
@@ -21,9 +21,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 # pylint: disable=wrong-import-position
 import numpy as np  # noqa: E402
-from deity_informant.tuneprog.history import history, widen_u16  # noqa: E402
-from deity_informant.tuneprog.ir import Tuneprog  # noqa: E402
-from deity_informant.tuneprog.tracedata import Trace  # noqa: E402
+from tuneprog.history import history, widen_u16  # noqa: E402
+from tuneprog.ir import Tuneprog  # noqa: E402
+from tuneprog.tracedata import Trace  # noqa: E402
 
 
 def distinct(a):

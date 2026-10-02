@@ -1,7 +1,7 @@
 """The tuneprog machine and the reference interpreter that defines the semantics.
 
-The machine is one flat 64 KiB image plus the marks, logs and pinned input stream
-:mod:`~deity_informant.tuneprog.trace` recorded; :class:`Interp` executes a
+The machine is one flat ``0x10000``-byte image plus the marks, logs and pinned input stream
+:mod:`~tuneprog.trace` recorded; :class:`Interp` executes a
 :class:`~.ir.Tuneprog` over it, and every other executor is verified against it.
 """
 
@@ -41,7 +41,7 @@ class Machine:
     ``k`` marks bytes whose value the program knows (load image, stack page, and
     everything written); ``W`` is the set of addresses written in the current
     phase -- the footprint the periodicity hash covers, exactly as
-    :class:`~deity_informant.tuneprog.trace.Tracer` computes it.
+    :class:`~tuneprog.trace.Tracer` computes it.
     """
 
     __slots__ = (

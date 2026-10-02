@@ -9,7 +9,7 @@ machine reads the voice's note out of.
 """
 
 from _frag import C, V, sid, store
-from deity_informant.tuneprog.ir import (
+from tuneprog.ir import (
     Bin,
     Block,
     Const,
@@ -22,7 +22,7 @@ from deity_informant.tuneprog.ir import (
     Rgn,
     Tuneprog,
 )
-from deity_informant.tuneprog.recover import Names
+from tuneprog.recover import Names
 
 FREQ, WAVE, ADSR, WTAB = 0x3000, 0x3100, 0x3110, 0x3120
 ORD, PAT = 0x3200, 0x3240

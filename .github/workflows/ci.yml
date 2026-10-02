@@ -1,0 +1,89 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7
+        with:
+          repository: anarkiwi/deity-informant
+          path: _deity
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install -e ./_deity -e ".[dev]"
+      - name: Format
+        run: black --check tuneprog/ trackerprog/ tests/ tools/ ghidra/
+      - name: Lint
+        run: pylint tuneprog/ trackerprog/
+      - name: Test
+        run: pytest tests/ -m "not oracle and not hvsc" -n auto --cov=tuneprog --cov=trackerprog --cov-fail-under=85
+
+  oracle:
+    # Byte-exact SID register-grid comparison of deity-informant's VM against the
+    # Dockerized sidplayfp/sidtrace oracle. Separate job so a flaky oracle or
+    # HVSC fetch never blocks the hermetic unit CI above. HVSC .sid tunes and
+    # the sidtrace CSVs are cached, never committed.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7
+        with:
+          repository: anarkiwi/deity-informant
+          path: _deity
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install -e ./_deity -e ".[dev,oracle]"
+      - name: Cache HVSC tunes
+        uses: actions/cache@v6
+        with:
+          path: .oracle-cache/hvsc
+          key: hvsc-${{ hashFiles('tuneprog/tunes.py') }}
+      - name: Pull sidtrace oracle image
+        run: docker pull anarkiwi/sidtrace:latest
+      - name: Cache oracle CSVs
+        uses: actions/cache@v6
+        with:
+          path: .oracle-cache/csv
+          key: oracle-csv-${{ hashFiles('tuneprog/tunes.py', 'tests/test_oracle.py') }}
+      - name: Oracle test
+        run: pytest tests/ -m oracle -n auto
+      - name: tuneprog front end, certificates and printed form on HVSC exemplars
+        run: pytest tests/ -m hvsc -n auto
+
+  ghidra-integration:
+    # The tuneprog oracles under the actual Ghidra headless analyzer, all in
+    # ghidra/6510/headless/run.sh: the hello-world SMC export (the self-modified
+    # STA must decompile as a store through its own operand cell), the
+    # complexity/coverage oracle, the P-Code emulator semantic oracle, the IRQ
+    # frame and the banking gate. Ghidra, JDK and deity-informant live in a
+    # multistage image (Dockerfile.ghidra); its layers are GHA-cached.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: docker/setup-buildx-action@v4
+      - name: Resolve deity-informant ref
+        id: deity
+        run: echo "sha=$(git ls-remote https://github.com/anarkiwi/deity-informant HEAD | cut -f1)" >> "$GITHUB_OUTPUT"
+      - name: Build Ghidra integration image
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          file: Dockerfile.ghidra
+          tags: tp-ghidra:ci
+          build-args: DEITY_REF=${{ steps.deity.outputs.sha }}
+          load: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      - name: Run Ghidra headless integration test
+        run: docker run --rm tp-ghidra:ci

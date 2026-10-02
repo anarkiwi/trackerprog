@@ -23,7 +23,7 @@ needed · 5 what the spec got right · 6 measurements.
 ## 1. The object
 
 `tools/trackerprog_commando.py` writes `trackerprog.json`;
-`deity_informant/trackerprog/universal.py` renders it.
+`trackerprog/universal.py` renders it.
 
 | section | Commando song 1 |
 | --- | --- |
@@ -81,7 +81,7 @@ not one byte of the object names a memory location.
 
 ## 3. The certificate
 
-`deity_informant/trackerprog/attest.py`, §2's comparison over the whole horizon
+`trackerprog/attest.py`, §2's comparison over the whole horizon
 against the tune's own player on `deity_informant.PcodeVM`.
 
 | subtune | ins | patterns | events | tuning | `beyond` | acc arms | ticks | SID writes | divergences |

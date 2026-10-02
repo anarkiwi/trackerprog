@@ -52,9 +52,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 # pylint: disable=wrong-import-position
 from deity_informant.lifter import lift  # noqa: E402
-from deity_informant.trackerprog import printer  # noqa: E402
-from deity_informant.trackerprog.attest import attest  # noqa: E402
-from deity_informant.trackerprog.universal import render  # noqa: E402
+from trackerprog import printer  # noqa: E402
+from trackerprog.attest import attest  # noqa: E402
+from trackerprog.universal import render  # noqa: E402
 from deity_informant.vm import PcodeVM, run_sub  # noqa: E402
 
 TICKS = 10426  # the whole certified horizon: 2,085 rows of five frames, 208 s
@@ -128,7 +128,7 @@ def run(path, ticks=TICKS):
     until the player has made them; this reads each voice's finished tokens out
     of the cells the tokenizer leaves them in -- ``pendins``, ``pendfx``,
     ``pendnote`` -- at the tick after its last pass, which is the tick before the
-    boundary that applies them.  Section 6's materialisation, measured rather
+    boundary that applies them.  Section 6's materialisation, read off the run rather
     than re-implemented.
     """
     d = Path(path).read_bytes()
@@ -514,7 +514,7 @@ def claim(path):
     """What the source tuneprog's certificate claims, and the binding to it.
 
     The horizon is the certificate's and never the tool's: this tune is
-    ``horizon``-terminated -- 208 seconds of music whose state never repeats, so
+    ``horizon``-terminated -- music whose state never repeats over the whole horizon, so
     ``period`` is null and there is no inherited loop to re-verify.
     """
     d = Path(path).read_bytes()

@@ -21,12 +21,12 @@ from __future__ import annotations
 import lzma
 import re
 
-from ..tuneprog.accguard import guardpath
-from ..tuneprog.accshape import Ctx
-from ..tuneprog.facts import SID_VOICES
-from ..tuneprog.ir import Bin, Const, Load, R16, Tuneprog, Var, dec, enc
-from ..tuneprog.irwalk import addr_split, walk
-from ..tuneprog.tracedata import input_kind
+from tuneprog.accguard import guardpath
+from tuneprog.accshape import Ctx
+from tuneprog.facts import SID_VOICES
+from tuneprog.ir import Bin, Const, Load, R16, Tuneprog, Var, dec, enc
+from tuneprog.irwalk import addr_split, walk
+from tuneprog.tracedata import input_kind
 from . import cursors, interp, region
 from .refuse import Refusal
 from .resolve import Program

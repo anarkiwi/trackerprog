@@ -25,12 +25,12 @@ for _v in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS"):
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 # pylint: disable=wrong-import-position
-from deity_informant.trackerprog import certify, emit, lift  # noqa: E402
-from deity_informant.tuneprog import accum, pipeline, provenance  # noqa: E402
-from deity_informant.tuneprog.history import history  # noqa: E402
-from deity_informant.tuneprog.ir import Tuneprog  # noqa: E402
-from deity_informant.tuneprog.recover import Names  # noqa: E402
-from deity_informant.tuneprog.tracedata import Trace  # noqa: E402
+from trackerprog import certify, emit, lift  # noqa: E402
+from tuneprog import accum, pipeline, provenance  # noqa: E402
+from tuneprog.history import history  # noqa: E402
+from tuneprog.ir import Tuneprog  # noqa: E402
+from tuneprog.recover import Names  # noqa: E402
+from tuneprog.tracedata import Trace  # noqa: E402
 
 
 def documents(out, prog, view, st, names, hist, ver, cert):

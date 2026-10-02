@@ -12,8 +12,8 @@ from __future__ import annotations
 
 import itertools
 
-from ..tuneprog.ir import Let, Load, Store, Var
-from ..tuneprog.irwalk import addr_split, walk
+from tuneprog.ir import Let, Load, Store, Var
+from tuneprog.irwalk import addr_split, walk
 from .read import Unlowerable
 from .shape import _reads
 

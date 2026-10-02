@@ -18,8 +18,8 @@ ROOT = HERE.parent.parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(ROOT / "tools"))
 
-from deity_informant.trackerprog import poison  # noqa: E402
-from deity_informant.trackerprog.universal import render  # noqa: E402
+from trackerprog import poison  # noqa: E402
+from trackerprog.universal import render  # noqa: E402
 
 import trackerprog_poison as TP  # noqa: E402
 from test_universal import event, ins, obj  # noqa: E402
@@ -172,7 +172,7 @@ def test_the_report_line_carries_the_count_the_sites_and_the_first_tick():
 
 
 def test_every_build_names_a_committed_certificate_and_a_known_tune():
-    from deity_informant.tuneprog import tunes
+    from tuneprog import tunes
 
     for b in TP.BUILDS:
         assert (TP.CERTS / (b.cert + ".json")).is_file()
@@ -239,7 +239,7 @@ def test_a_sweep_reports_per_build_and_totals(capsys, tmp_path):
 def test_a_certified_build_strikes_over_its_whole_horizon(tmp_path):
     """Section 7's P7 row, reproduced: the clock with no reset at all."""
     pytest.importorskip("pysidtracker")
-    from deity_informant.tuneprog import tunes
+    from tuneprog import tunes
 
     if tunes.resolve(TP.BUILD["jch-guldkorn"].tune) is None:
         pytest.skip("Guldkornekspressen_Intro.sid unavailable")

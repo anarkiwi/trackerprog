@@ -8,9 +8,9 @@ it is excised at the L1 -> L2 boundary and replayed, its visits become section
 
 from __future__ import annotations
 
-from ...tuneprog.graph import succs
-from ...tuneprog.ir import Let, Load, Store
-from ...tuneprog.irwalk import addr_split
+from tuneprog.graph import succs
+from tuneprog.ir import Let, Load, Store
+from tuneprog.irwalk import addr_split
 from .. import build, record, schedule, tables
 from ..events import Score, _same, _scorecells, fields_of, masks_of, terms_of, tie_of
 from ..read import Unlowerable

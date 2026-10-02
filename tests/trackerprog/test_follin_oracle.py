@@ -18,9 +18,9 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tuneprog"))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "tools"))
 
-from deity_informant.trackerprog import printer  # noqa: E402
-from deity_informant.trackerprog.attest import attest  # noqa: E402
-from deity_informant.trackerprog.universal import CHIP  # noqa: E402
+from trackerprog import printer  # noqa: E402
+from trackerprog.attest import attest  # noqa: E402
+from trackerprog.universal import CHIP  # noqa: E402
 
 import trackerprog_follin as TF  # noqa: E402
 from _hvsc import GNG, tune_file  # noqa: E402

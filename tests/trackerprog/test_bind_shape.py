@@ -20,9 +20,9 @@ from _bound import (
     View,
 )
 from _procs import trapping
-from deity_informant.trackerprog import emit, region, schedule, sections, shape
-from deity_informant.trackerprog.cells import Cells
-from deity_informant.trackerprog.refuse import Refused
+from trackerprog import emit, region, schedule, sections, shape
+from trackerprog.cells import Cells
+from trackerprog.refuse import Refused
 
 
 def test_a_block_the_program_cannot_leave_is_no_block_of_a_phase():

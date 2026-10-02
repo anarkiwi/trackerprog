@@ -7,17 +7,17 @@ interleaving is readable straight off the write log.
 
 import pytest
 
-from deity_informant.tuneprog import ghidra_facts, nmi as N
-from deity_informant.tuneprog.cia import CIA, CIA1_BASE, CIA2_BASE, ICR_TA, ICR_TB
-from deity_informant.tuneprog.emit import _Fn, _store
-from deity_informant.tuneprog.ir import Bin, Const, Load, Store, Var
-from deity_informant.tuneprog.machine import (
+from tuneprog import ghidra_facts, nmi as N
+from tuneprog.cia import CIA, CIA1_BASE, CIA2_BASE, ICR_TA, ICR_TB
+from tuneprog.emit import _Fn, _store
+from tuneprog.ir import Bin, Const, Load, Store, Var
+from tuneprog.machine import (
     Refusal,
     STATUS,
     entry_frame,
     frame_slots,
 )
-from deity_informant.tuneprog.trace import IDLE_INDEX, IDLE_PC
+from tuneprog.trace import IDLE_INDEX, IDLE_PC
 
 from _asm import asm, trace_prog
 
@@ -287,8 +287,8 @@ def test_the_icr_mask_names_the_sources_the_model_carries():
 # ---- the whole pipeline over a two-entry schedule ----------------------------
 def _decompiled(**kw):
     """Decompile and verify a two-entry machine on both executors."""
-    from deity_informant.tuneprog import pipeline
-    from deity_informant.tuneprog.verify import certify, verify
+    from tuneprog import pipeline
+    from tuneprog.verify import certify, verify
 
     trace, _tr = _run(calls=kw.pop("calls", 6), **kw)
     prog, _regions, _procs = pipeline.build(trace, "nmi-fixture")
@@ -451,9 +451,9 @@ def test_a_handler_that_reads_what_the_play_routine_writes_verifies():
 
 def test_a_single_entry_program_pays_nothing_for_the_hook():
     """The generated text of a one-entry program carries no preemption point at all."""
-    from deity_informant.tuneprog import emit, pipeline
-    from deity_informant.tuneprog.interp import Machine, NmiMachine
-    from deity_informant.tuneprog.verify import Reference, Verifier
+    from tuneprog import emit, pipeline
+    from tuneprog.interp import Machine, NmiMachine
+    from tuneprog.verify import Reference, Verifier
 
     blocks = {INIT: asm(INIT, "RTS"), PLAY: asm(PLAY, "LDA #$01", "STA $D400", "STA $2000", "RTS")}
     trace, _tr = trace_prog(blocks, INIT, PLAY, calls=2)

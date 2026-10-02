@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Certify a SID tune: trace -> lift -> regions -> procedures -> IR -> S4 -> Python -> verify.
 
-A thin wrapper around :mod:`deity_informant.tuneprog.pipeline`, which is also what
+A thin wrapper around :mod:`tuneprog.pipeline`, which is also what
 ``deity-informant tuneprog`` runs. Every stage's artefacts land in ``--out DIR``
 and the long stages are chunked: each invocation works for ``--budget`` CPU
 seconds and exits 2 when there is more to do, so a long certificate is a handful
@@ -23,7 +23,7 @@ for _v in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS"):
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 # pylint: disable=wrong-import-position
-from deity_informant.tuneprog import pipeline  # noqa: E402
+from tuneprog import pipeline  # noqa: E402
 
 MORE = pipeline.MORE
 

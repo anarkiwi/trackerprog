@@ -2,10 +2,10 @@
 
 import json
 
-from deity_informant.tuneprog import pipeline, printer
-from deity_informant.tuneprog.ir import Load, Store
-from deity_informant.tuneprog.machine import MachineImage, port_bank
-from deity_informant.tuneprog.verify import verify
+from tuneprog import pipeline, printer
+from tuneprog.ir import Load, Store
+from tuneprog.machine import MachineImage, port_bank
+from tuneprog.verify import verify
 
 from _asm import asm, psid
 from _prog import PLAY, front, tuneprog

@@ -12,15 +12,15 @@ import pytest
 
 pytest.importorskip("pysidtracker")
 
-from deity_informant.tuneprog import copymerge, pipeline, printer, tunes  # noqa: E402
-from deity_informant.tuneprog.cfg import build_procs  # noqa: E402
-from deity_informant.tuneprog.ir import Const, Let, Load, Switch, Var  # noqa: E402
-from deity_informant.tuneprog.irwalk import loads, node_exprs, walk  # noqa: E402
-from deity_informant.tuneprog.lift import lift_trace  # noqa: E402
-from deity_informant.tuneprog.machine import find_entries  # noqa: E402
-from deity_informant.tuneprog.regions import build_regions  # noqa: E402
-from deity_informant.tuneprog.trace import Tracer  # noqa: E402
-from deity_informant.tuneprog.verify import certify, verify  # noqa: E402
+from tuneprog import copymerge, pipeline, printer, tunes  # noqa: E402
+from tuneprog.cfg import build_procs  # noqa: E402
+from tuneprog.ir import Const, Let, Load, Switch, Var  # noqa: E402
+from tuneprog.irwalk import loads, node_exprs, walk  # noqa: E402
+from tuneprog.lift import lift_trace  # noqa: E402
+from tuneprog.machine import find_entries  # noqa: E402
+from tuneprog.regions import build_regions  # noqa: E402
+from tuneprog.trace import Tracer  # noqa: E402
+from tuneprog.verify import certify, verify  # noqa: E402
 
 from _prog import proc_body as body  # noqa: E402
 

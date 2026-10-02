@@ -4,11 +4,11 @@ from types import SimpleNamespace
 
 import pytest
 
-from deity_informant.tuneprog import copyview, datablock, partition, pipeline, printer
-from deity_informant.tuneprog.ir import Const, Rgn, Tuneprog
-from deity_informant.tuneprog.irwalk import Acc
-from deity_informant.tuneprog.pseudocode import Printer
-from deity_informant.tuneprog.recover import Names
+from tuneprog import copyview, datablock, partition, pipeline, printer
+from tuneprog.ir import Const, Rgn, Tuneprog
+from tuneprog.irwalk import Acc
+from tuneprog.pseudocode import Printer
+from tuneprog.recover import Names
 
 from _asm import asm
 from _prog import PLAY, printed, proc_body, tuneprog

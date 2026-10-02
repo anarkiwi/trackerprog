@@ -7,7 +7,7 @@ not hold, the section 5 cell vocabulary read and written as a ``sets`` target,
 reporting the decision the step made rather than a re-reading of the cell.
 """
 
-from deity_informant.trackerprog.universal import Player, chipreg, render
+from trackerprog.universal import Player, chipreg, render
 
 # the image, in the order the write-out runs
 FLUSH = ["v0.pw_lo", "v0.pw_hi", "v0.freq_lo", "v0.freq_hi", "v0.sr", "v0.ad", "v0.ctrl"]
@@ -192,7 +192,7 @@ def test_the_gate_reports_the_decision_the_step_made_not_the_cell_it_left():
         }
     }
     w = render(obj(accs=a, arms=[{"acc": "bounce"}], cells={"level": [0]}), 4)
-    # level 0 -> 4 -> 8: the step that took it to 8 still reports that it stepped
+    # level 0 -> 4 -> 8: the step that brought it to 8 still reports that it stepped
     assert [dict(t)[5] for t in w] == [0x00, 0x11, 0x11, 0x22]
 
 

@@ -20,12 +20,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 # pylint: disable=wrong-import-position
 from deity_informant.lifter import lift  # noqa: E402
-from deity_informant.trackerprog import printer  # noqa: E402
-from deity_informant.trackerprog.attest import COMPARED, DROPPED  # noqa: E402
-from deity_informant.trackerprog.universal import REGNAME, Player, render  # noqa: E402
-from deity_informant.tuneprog import grid  # noqa: E402
-from deity_informant.trackerprog.refuse import Refusal  # noqa: E402
-from deity_informant.tuneprog.machine import MachineImage, find_entries, port_bank  # noqa: E402
+from trackerprog import printer  # noqa: E402
+from trackerprog.attest import COMPARED, DROPPED  # noqa: E402
+from trackerprog.universal import REGNAME, Player, render  # noqa: E402
+from tuneprog import grid  # noqa: E402
+from trackerprog.refuse import Refusal  # noqa: E402
+from tuneprog.machine import MachineImage, find_entries, port_bank  # noqa: E402
 from deity_informant.vm import PcodeVM, run_sub  # noqa: E402
 
 VOICES = 3
@@ -849,7 +849,7 @@ class Tune:
 
         The three kinds the column packs are constants of the table, so the tune
         states them rather than the reader deriving them from a byte range every
-        tick (section 3.6's "byte ranges as token classes", spent here too).
+        tick (section 3.6's "byte ranges as token classes", consumed here too).
         ``next`` is section 3.3's link made explicit -- the jump's target on a
         jump row and the row itself on every other, so the reader follows it
         unconditionally and a note row's follow is the identity.  ``$7E`` -- step

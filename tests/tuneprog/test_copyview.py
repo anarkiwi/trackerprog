@@ -8,10 +8,10 @@ The substitution must be exact -- an affine plan evaluated at ``v = j`` is copy
 import random
 import re
 
-from deity_informant.tuneprog import copyview, live as L, pipeline, printer, structure, views
-from deity_informant.tuneprog.ir import Bin, Const, Load, Let, Rgn, Store, Var
-from deity_informant.tuneprog.recover import Names
-from deity_informant.tuneprog.irwalk import node_exprs, walk
+from tuneprog import copyview, live as L, pipeline, printer, structure, views
+from tuneprog.ir import Bin, Const, Load, Let, Rgn, Store, Var
+from tuneprog.recover import Names
+from tuneprog.irwalk import node_exprs, walk
 
 from _asm import asm
 from _prog import PLAY, front, merged, printed as _text, proc_body as _body

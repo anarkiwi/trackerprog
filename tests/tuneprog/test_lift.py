@@ -4,7 +4,7 @@ import pytest
 
 from deity_informant import PcodeVM
 from deity_informant.lifter import MODE_LEN, OPS, lift
-from deity_informant.tuneprog.lift import lift_site, lift_trace
+from tuneprog.lift import lift_site, lift_trace
 
 from _asm import asm, trace_prog
 

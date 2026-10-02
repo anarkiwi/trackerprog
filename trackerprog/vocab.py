@@ -7,8 +7,8 @@ A leaf with no name here is a refusal, and the score supplies the score's bytes.
 
 from __future__ import annotations
 
-from ..tuneprog.ir import Bin, Const, Load, Store, Var
-from ..tuneprog.irwalk import addr_split
+from tuneprog.ir import Bin, Const, Load, Store, Var
+from tuneprog.irwalk import addr_split
 from .read import Unlowerable, masked
 from .universal import REGNAME
 

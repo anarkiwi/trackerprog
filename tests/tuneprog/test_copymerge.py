@@ -9,10 +9,10 @@ import re
 
 import pytest
 
-from deity_informant.tuneprog import closure, copymerge, copyrows, pipeline, siblings
-from deity_informant.tuneprog.emit import PyProgram
-from deity_informant.tuneprog.interp import Interp, Machine
-from deity_informant.tuneprog.ir import (
+from tuneprog import closure, copymerge, copyrows, pipeline, siblings
+from tuneprog.emit import PyProgram
+from tuneprog.interp import Interp, Machine
+from tuneprog.ir import (
     Bin,
     Const,
     Goto,
@@ -24,8 +24,8 @@ from deity_informant.tuneprog.ir import (
     TrapError,
     Var,
 )
-from deity_informant.tuneprog.irwalk import walk
-from deity_informant.tuneprog.verify import verify
+from tuneprog.irwalk import walk
+from tuneprog.verify import verify
 
 from _asm import asm
 from _prog import PLAY, front, merged, proc_body as _body

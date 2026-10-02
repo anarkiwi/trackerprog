@@ -4,7 +4,7 @@ Partial evaluation against the tune's own static tables.  The fetch region is
 replayed over the certified horizon and its visits become §3.6's events, whose
 fields are the values the visit stored into the cells L3 typed -- ``dur`` into
 the clock's, ``note`` into the tuning's index, ``ins`` into the selector's --
-and the walk the horizon took becomes the score's own play lists.  The counter
+and the walk over the horizon becomes the score's own play lists.  The counter
 the rows stepped becomes ``meta.tempo``, which the player steps, so the reads
 that stood before that step read the step the tick is (``phase``).  A cursor a
 row walks over a declared table becomes a §3.3 cursor stream with ``next`` and
@@ -54,7 +54,7 @@ def visits(l3, ticks):
 
 
 def _succs(term):
-    from ...tuneprog.graph import succs  # pylint: disable=import-outside-toplevel
+    from tuneprog.graph import succs  # pylint: disable=import-outside-toplevel
 
     return succs(term)
 

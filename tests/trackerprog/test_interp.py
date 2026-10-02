@@ -6,11 +6,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tuneprog"))
 
-from deity_informant.trackerprog import certify, emit, interp, lift, region  # noqa: E402
-from deity_informant.trackerprog.refuse import Refusal  # noqa: E402
-from deity_informant.tuneprog import pipeline, provenance  # noqa: E402
-from deity_informant.tuneprog.history import history  # noqa: E402
-from deity_informant.tuneprog.verify import certify as certified  # noqa: E402
+from trackerprog import certify, emit, interp, lift, region  # noqa: E402
+from trackerprog.refuse import Refusal  # noqa: E402
+from tuneprog import pipeline, provenance  # noqa: E402
+from tuneprog.history import history  # noqa: E402
+from tuneprog.verify import certify as certified  # noqa: E402
 
 from _asm import asm  # noqa: E402
 from _prog import PLAY, tuneprog  # noqa: E402

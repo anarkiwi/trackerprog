@@ -37,7 +37,7 @@ needed · 5 what the spec got right · 6 finding the data · 7 measurements ·
 ## 1. The object
 
 `tools/trackerprog_defmon.py` writes `trackerprog.json`;
-`deity_informant/trackerprog/universal.py` renders it.
+`trackerprog/universal.py` renders it.
 
 | section | Automatas | Jazzpjazz |
 | --- | --- | --- |
@@ -95,7 +95,7 @@ the object names a memory location.
 
 ## 3. The certificate
 
-`deity_informant/trackerprog/attest.py`'s comparison, inlined in the tool so it
+`trackerprog/attest.py`'s comparison, inlined in the tool so it
 can be chunked (architecture §11): §2's observable over the **whole** certified
 horizon against the tune's own player on `deity_informant.PcodeVM`.
 

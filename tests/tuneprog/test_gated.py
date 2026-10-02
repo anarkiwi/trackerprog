@@ -7,13 +7,13 @@ whole byte, which is what an unproved side condition looks like.
 
 import numpy as np
 
-from deity_informant.tuneprog import pipeline, printer
-from deity_informant.tuneprog.gated import _rule, diamonds, ranged
-from deity_informant.tuneprog.ir import Bin, Block, Const, Goto, If, Let, Load, Proc
-from deity_informant.tuneprog.ir import Return, Store
-from deity_informant.tuneprog.ir import Tuneprog, Var
-from deity_informant.tuneprog.ranges import cell_ranges, expr_range
-from deity_informant.tuneprog.verify import verify
+from tuneprog import pipeline, printer
+from tuneprog.gated import _rule, diamonds, ranged
+from tuneprog.ir import Bin, Block, Const, Goto, If, Let, Load, Proc
+from tuneprog.ir import Return, Store
+from tuneprog.ir import Tuneprog, Var
+from tuneprog.ranges import cell_ranges, expr_range
+from tuneprog.verify import verify
 
 from _asm import asm
 from _prog import PLAY, tuneprog

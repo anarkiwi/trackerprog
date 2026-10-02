@@ -128,7 +128,7 @@ class Trace:
     ``wlog``/``iolog`` are column arrays ``call, addr, val, cyc, nmi``; rows written
     during ``init`` carry ``call = 0xFFFFFFFF`` (and are also in ``init_writes``),
     and ``nmi`` is 1 for a row a handler of the schedule's second entry made.
-    ``sites`` is keyed by :func:`~deity_informant.tuneprog.trace.site_key` and its
+    ``sites`` is keyed by :func:`~tuneprog.trace.site_key` and its
     ``reads``/``writes`` map a P-Code op index to the exact address set it touched.
     """
 

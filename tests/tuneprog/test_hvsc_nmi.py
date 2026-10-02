@@ -9,8 +9,8 @@ preempting a raster-driven play routine ([playroutine-anatomy.md] 3.5).
 import pytest
 
 from deity_informant import c64
-from deity_informant.tuneprog.machine import find_entries, frame_slots
-from deity_informant.tuneprog.trace import Tracer
+from tuneprog.machine import find_entries, frame_slots
+from tuneprog.trace import Tracer
 
 from _hvsc import ALIEN3, EASY, JAZZPJAZZ, decompiled, tune
 

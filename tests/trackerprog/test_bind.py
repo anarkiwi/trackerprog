@@ -25,9 +25,9 @@ from _bound import (
     ram,
     store,
 )
-from deity_informant.trackerprog import bind
-from deity_informant.trackerprog.refuse import Refused
-from deity_informant.tuneprog.ir import Bin, Block, Goto, If, Return
+from trackerprog import bind
+from trackerprog.refuse import Refused
+from tuneprog.ir import Bin, Block, Goto, If, Return
 
 
 # ---- the whole binding ----------------------------------------------------------

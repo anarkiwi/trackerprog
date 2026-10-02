@@ -9,8 +9,8 @@ from __future__ import annotations
 
 from types import SimpleNamespace
 
-from ...tuneprog.ir import If, Load, Store
-from ...tuneprog.irwalk import addr_split, walk
+from tuneprog.ir import If, Load, Store
+from tuneprog.irwalk import addr_split, walk
 from ..cells import ident
 from ..read import Unlowerable
 from ..rows import blockrows, guards

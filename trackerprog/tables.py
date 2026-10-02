@@ -9,9 +9,9 @@ from __future__ import annotations
 
 from collections import namedtuple
 
-from ..tuneprog import irwalk
-from ..tuneprog.ir import Bin, Const, Load, Store
-from ..tuneprog.irwalk import addr_split, walk
+from tuneprog import irwalk
+from tuneprog.ir import Bin, Const, Load, Store
+from tuneprog.irwalk import addr_split, walk
 from . import emit
 
 NOTES = 256  # a note is a byte, so no index of the tuning is past this

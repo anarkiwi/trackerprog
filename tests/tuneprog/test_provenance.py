@@ -8,8 +8,8 @@ renders for that site, which is the acceptance the exemplars repeat.
 
 import pytest
 
-from deity_informant.tuneprog import pipeline, printer, provenance
-from deity_informant.tuneprog.ir import Const, Load, SID_REG_LO, Var
+from tuneprog import pipeline, printer, provenance
+from tuneprog.ir import Const, Load, SID_REG_LO, Var
 
 from _asm import asm
 from _prog import PLAY, counter, tuneprog

@@ -7,8 +7,8 @@ in one list, which the step loop then only indexes.
 
 from __future__ import annotations
 
-from ..lifter import OPS, MODE_LEN, STATUS_BITS
-from ..vm import _emit_line, _rd_expr, _lhs
+from deity_informant.lifter import OPS, MODE_LEN, STATUS_BITS
+from deity_informant.vm import _emit_line, _rd_expr, _lhs
 
 IDX_REG = {"absx": 1, "zpx": 1, "indx": 1, "absy": 2, "zpy": 2, "indy": 2}
 ILEN = [MODE_LEN[OPS[b][1]] for b in range(256)]

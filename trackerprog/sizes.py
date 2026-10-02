@@ -1,8 +1,8 @@
-"""Section 9.1's measurement: the object against the tune's own load band.
+"""Section 9.1's comparison: the object against the tune's own load band.
 
 Section 9 asked whether the score compresses better than the program that played
-it, and measured against ``tuneprog.md`` -- a pretty-printed decompilation, and
-a claim measured against a presentation artefact is not measured.  The program
+it, and compared against ``tuneprog.md`` -- a pretty-printed decompilation, and
+a claim checked against a presentation artefact is not checked.  The program
 that played the tune is the binary, so the denominator here is the PSID load
 band with its header stripped.
 
@@ -16,7 +16,7 @@ from __future__ import annotations
 import json
 import lzma
 
-from ..c64 import _psid_body, psid_songs
+from deity_informant.c64 import _psid_body, psid_songs
 
 PRESET = 9 | lzma.PRESET_EXTREME
 

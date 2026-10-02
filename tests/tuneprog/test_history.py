@@ -5,11 +5,11 @@ import json
 import numpy as np
 import pytest
 
-from deity_informant.tuneprog import pipeline
-from deity_informant.tuneprog.history import cells, history, widen_u16
-from deity_informant.tuneprog.ir import Load, Tuneprog
-from deity_informant.tuneprog.tracedata import Trace
-from deity_informant.tuneprog.verify import certify
+from tuneprog import pipeline
+from tuneprog.history import cells, history, widen_u16
+from tuneprog.ir import Load, Tuneprog
+from tuneprog.tracedata import Trace
+from tuneprog.verify import certify
 
 from _asm import asm
 from _prog import PLAY, counter, tuneprog

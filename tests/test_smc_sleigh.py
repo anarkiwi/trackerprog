@@ -5,18 +5,15 @@ Same program, same cell set, two independent engines: our Python lifter and the
 self-modified ``STA $0400`` into a store through the operand bytes it modifies.
 """
 
-import sys
-from pathlib import Path
-
 import pytest
 
 from deity_informant import PcodeVM, lift
-from deity_informant.tuneprog.lift import lift_site
+from tuneprog import deity
+from tuneprog.lift import lift_site
 
-from examples.hello_world import ORG, PROGRAM, STA_PC
-
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "ghidra" / "6510"))
+deity.on_path()
 # pylint: disable=wrong-import-position
+from examples.hello_world import ORG, PROGRAM, STA_PC  # noqa: E402
 import build as build6510  # noqa: E402
 import smc  # noqa: E402
 

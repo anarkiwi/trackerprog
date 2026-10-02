@@ -24,10 +24,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 # pylint: disable=wrong-import-position
 from deity_informant.lifter import lift  # noqa: E402
-from deity_informant.trackerprog import printer  # noqa: E402
-from deity_informant.trackerprog.attest import attest  # noqa: E402
-from deity_informant.trackerprog.universal import REGNAME, render  # noqa: E402
-from deity_informant.tuneprog.machine import MachineImage  # noqa: E402
+from trackerprog import printer  # noqa: E402
+from trackerprog.attest import attest  # noqa: E402
+from trackerprog.universal import REGNAME, render  # noqa: E402
+from tuneprog.machine import MachineImage  # noqa: E402
 from deity_informant.vm import PcodeVM, run_sub  # noqa: E402
 
 VOICES = 3
@@ -347,7 +347,7 @@ def command(m, b, p):
     if b == 0x83:
         return _sets([["@gated", 1], ["@gatelen", a[0]]])
     if b == 0x84:
-        return {"rows": []}  # $84's length is fixed: the parse spent it
+        return {"rows": []}  # $84's length is fixed: the parse consumed it
     if b == 0x88:
         return {
             "rows": [

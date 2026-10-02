@@ -26,8 +26,8 @@ from pathlib import Path
 
 import numpy as np
 
-from ..lifter import lift
-from .. import c64
+from deity_informant.lifter import lift
+from deity_informant import c64
 from . import nmi as N
 from .machine import (
     Entry,

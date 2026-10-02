@@ -26,9 +26,9 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "tools"))
 
 # pylint: disable=wrong-import-position
-from deity_informant.trackerprog import build, emit, record, region, sizes  # noqa: E402
-from deity_informant.trackerprog.attest import attest  # noqa: E402
-from deity_informant.trackerprog.passes import (  # noqa: E402
+from trackerprog import build, emit, record, region, sizes  # noqa: E402
+from trackerprog.attest import attest  # noqa: E402
+from trackerprog.passes import (  # noqa: E402
     ir,
     l1_structure,
     l2_phases,
@@ -38,10 +38,10 @@ from deity_informant.trackerprog.passes import (  # noqa: E402
     l6_canon,
     rir,
 )
-from deity_informant.trackerprog.passes.ir import Level  # noqa: E402
-from deity_informant.trackerprog.shape import _channels, _rowblocks  # noqa: E402
-from deity_informant.tuneprog.ir import Tuneprog  # noqa: E402
-from deity_informant.tuneprog.tracedata import Trace  # noqa: E402
+from trackerprog.passes.ir import Level  # noqa: E402
+from trackerprog.shape import _channels, _rowblocks  # noqa: E402
+from tuneprog.ir import Tuneprog  # noqa: E402
+from tuneprog.tracedata import Trace  # noqa: E402
 
 from tuneprog_trackerprog import reference  # noqa: E402  # pylint: disable=wrong-import-order
 

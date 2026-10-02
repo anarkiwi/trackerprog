@@ -11,14 +11,14 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tuneprog"))
 
 from deity_informant.lifter import lift as _lift  # noqa: E402
-from deity_informant.trackerprog import bind, build, emit, record, region  # noqa: E402
-from deity_informant.trackerprog.passes import ir, l1_structure, l2_phases  # noqa: E402
-from deity_informant.trackerprog.shape import _channels, _rowblocks  # noqa: E402
-from deity_informant.trackerprog.attest import attest  # noqa: E402
-from deity_informant.trackerprog.refuse import Refused  # noqa: E402
-from deity_informant.tuneprog import pipeline  # noqa: E402
-from deity_informant.tuneprog.ir import Tuneprog  # noqa: E402
-from deity_informant.tuneprog.tracedata import Trace  # noqa: E402
+from trackerprog import bind, build, emit, record, region  # noqa: E402
+from trackerprog.passes import ir, l1_structure, l2_phases  # noqa: E402
+from trackerprog.shape import _channels, _rowblocks  # noqa: E402
+from trackerprog.attest import attest  # noqa: E402
+from trackerprog.refuse import Refused  # noqa: E402
+from tuneprog import pipeline  # noqa: E402
+from tuneprog.ir import Tuneprog  # noqa: E402
+from tuneprog.tracedata import Trace  # noqa: E402
 from deity_informant.vm import PcodeVM, run_sub  # noqa: E402
 
 from _hvsc import COMMANDO, EMOMYST, GULDKORN, LINUS, tune_file  # noqa: E402

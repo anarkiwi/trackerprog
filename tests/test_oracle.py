@@ -2,7 +2,7 @@
 
 Renders a tune with deity's own P-Code VM and compares ``$D400..$D418`` per frame
 to the Dockerized ``sidplayfp``/``sidtrace`` oracle, both grids framed by
-:mod:`deity_informant.tuneprog.grid`. Marked ``oracle``; tunes fetch to a cache.
+:mod:`tuneprog.grid`. Marked ``oracle``; tunes fetch to a cache.
 """
 
 import os
@@ -20,8 +20,8 @@ from pysidtracker.oracle import aligned_match  # noqa: E402
 from pysidtracker.testing import TuneFetchError, oracle_grid  # noqa: E402
 
 from deity_informant import PcodeVM, lift, run_irq, run_sub  # noqa: E402
-from deity_informant.tuneprog import grid, tunes  # noqa: E402
-from deity_informant.tuneprog.machine import Entry, find_entries  # noqa: E402
+from tuneprog import grid, tunes  # noqa: E402
+from tuneprog.machine import Entry, find_entries  # noqa: E402
 
 _CACHE = Path(os.environ.get("DEITY_ORACLE_CACHE", ".oracle-cache"))
 _PW = set(reg.PW_HI_REGS)
@@ -102,7 +102,7 @@ KNOB = "I_Could_Eat_a_Knob_at_Night.sid"
 
 def _trace(path, nframes):
     """``nframes`` ticks of the tuneprog tracer on ``path``."""
-    from deity_informant.tuneprog.trace import Tracer  # pylint: disable=C0415
+    from tuneprog.trace import Tracer  # pylint: disable=C0415
 
     img, schedule = find_entries(path.read_bytes())
     tr = Tracer(img, schedule[0])

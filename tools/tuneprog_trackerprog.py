@@ -4,7 +4,7 @@
 Reads ``tuneprog.S4/S6/T0/T1/T2.json`` and ``certificate.json`` from a pipeline
 output directory, derives the schedule (B6), lowers the tick outside the fetch
 regions (B7) and writes ``trackerprog.json``/``.md`` -- an object with no
-``program`` key that ``deity_informant/trackerprog/universal.py`` renders.
+``program`` key that ``trackerprog/universal.py`` renders.
 
 Usage::
 
@@ -24,9 +24,9 @@ for _v in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS"):
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 # pylint: disable=wrong-import-position
-from deity_informant.trackerprog import bind, build, printer, sizes  # noqa: E402
-from deity_informant.trackerprog.refuse import Refused  # noqa: E402
-from deity_informant.trackerprog.attest import attest  # noqa: E402
+from trackerprog import bind, build, printer, sizes  # noqa: E402
+from trackerprog.refuse import Refused  # noqa: E402
+from trackerprog.attest import attest  # noqa: E402
 
 
 def hints(path):

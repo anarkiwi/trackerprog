@@ -10,10 +10,10 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from ..tuneprog.accguard import guardpath
-from ..tuneprog.graph import cfg, idoms, natural_loops, preds_of, rpo, succs
-from ..tuneprog.ir import Bin, Const, Let, Load, Store, Var
-from ..tuneprog.irwalk import addr_split, walk
+from tuneprog.accguard import guardpath
+from tuneprog.graph import cfg, idoms, natural_loops, preds_of, rpo, succs
+from tuneprog.ir import Bin, Const, Let, Load, Store, Var
+from tuneprog.irwalk import addr_split, walk
 from .emit import commit_order
 
 EDGE = ("ctrl", "ad", "sr")

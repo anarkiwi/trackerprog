@@ -2,8 +2,8 @@
 
 from _bound import C, GLOB, SWEEP, V, binder, other, ram, reader, store, tick, VOICES
 from _procs import Holder, diamond, halver
-from deity_informant.trackerprog import rows
-from deity_informant.tuneprog.ir import Bin, Block, Let, Proc, Return, Store
+from trackerprog import rows
+from tuneprog.ir import Bin, Block, Let, Proc, Return, Store
 
 
 def oddstore():

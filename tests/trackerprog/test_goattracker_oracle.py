@@ -13,9 +13,9 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tuneprog"))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "tools"))
 
-from deity_informant.trackerprog import printer  # noqa: E402
-from deity_informant.trackerprog.attest import attest  # noqa: E402
-from deity_informant.trackerprog.universal import REGNAME  # noqa: E402
+from trackerprog import printer  # noqa: E402
+from trackerprog.attest import attest  # noqa: E402
+from trackerprog.universal import REGNAME  # noqa: E402
 
 import trackerprog_goattracker as TG  # noqa: E402
 from _hvsc import DIA, LINUS, tune_file  # noqa: E402
@@ -251,7 +251,7 @@ def test_every_byte_of_the_tune_s_data_is_in_the_object(tune):
 
 
 def _canonical(events):
-    """Section 3.6's event, as the layer states it after the note column is spent."""
+    """Section 3.6's event, as the layer states it after the note column is consumed."""
     for e in events:
         assert set(e) == {"dur", "sounds", "tie", "gate", "note", "ins", "arm"}
         assert isinstance(e["sounds"], bool)

@@ -30,8 +30,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 # pylint: disable=wrong-import-position,wrong-import-order
 # pylint: disable=broad-exception-caught,global-statement
-from deity_informant.tuneprog import pipeline  # noqa: E402
-from deity_informant.tuneprog.machine import Refusal  # noqa: E402
+from tuneprog import pipeline  # noqa: E402
+from tuneprog.machine import Refusal  # noqa: E402
 from headers import header_row  # noqa: E402
 from run import _sample  # noqa: E402
 

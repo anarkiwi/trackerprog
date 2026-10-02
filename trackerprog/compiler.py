@@ -1,11 +1,11 @@
 """Section 5's expressions, guards and cells, compiled to closures.
 
-The object is fixed for a render, so every node of it is spent once here and
+The object is fixed for a render, so every node of it is compiled once here and
 called thereafter: a closure per expression, a predicate per guard list, a
 reader and a writer per named cell.  A node is bound to its children's closures
 where it is compiled, and to the numbers an arm or a command states beside it,
 so nothing here is looked up again while a tick runs.  It is the compile half
-of :class:`~deity_informant.trackerprog.universal.Player` and reads its state.
+of :class:`~trackerprog.universal.Player` and reads its state.
 """
 
 from __future__ import annotations
@@ -70,7 +70,7 @@ class Plan:
 
 
 class PlayerMixin:
-    """The object compiled: §5's forms, each spent once and called thereafter.
+    """The object compiled: §5's forms, each compiled once and called thereafter.
 
     The compile half of ``universal.Player``, whose state it reads: ``o`` the
     object, ``c`` the voice cells, ``v`` the voice being committed, ``ins`` the

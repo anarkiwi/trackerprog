@@ -10,9 +10,9 @@ import re
 
 import pytest
 
-from deity_informant.tuneprog import frames, idioms, live, machine, pipeline, stack, structure
-from deity_informant.tuneprog.frame import frames as name_frames
-from deity_informant.tuneprog.ir import (
+from tuneprog import frames, idioms, live, machine, pipeline, stack, structure
+from tuneprog.frame import frames as name_frames
+from tuneprog.ir import (
     Bin,
     Block,
     Call,
@@ -28,8 +28,8 @@ from deity_informant.tuneprog.ir import (
     Var,
     enc,
 )
-from deity_informant.tuneprog.irwalk import defs_of, node_loads, stmt_uses, term_uses
-from deity_informant.tuneprog.verify import verify
+from tuneprog.irwalk import defs_of, node_loads, stmt_uses, term_uses
+from tuneprog.verify import verify
 
 from _asm import asm, psid
 from _prog import PLAY, printed as _text, stack_access as _accesses, tuneprog
@@ -374,7 +374,7 @@ def test_the_certificate_field_names_the_procedures_that_kept_a_stack():
 
 
 def test_the_view_still_names_the_frames_of_a_residual_program():
-    """:mod:`~deity_informant.tuneprog.frame` names what the elimination left behind."""
+    """:mod:`~tuneprog.frame` names what the elimination left behind."""
     code = asm(
         PLAY,
         "init: LDA #$00",
@@ -406,7 +406,7 @@ def test_a_bit_of_a_packed_value_folds_to_the_value_that_packed_it():
 
 def _pack():
     """The byte ``PHP`` pushes: ``$30 | C | Z<<1 | I<<2 | D<<3 | V<<6 | N<<7``."""
-    from deity_informant.tuneprog.ir import Bin, Const
+    from tuneprog.ir import Bin, Const
 
     out = Const(0x30, 1)
     for name, sh in (("C", 0), ("Z", 1), ("I", 2), ("D", 3), ("V", 6), ("N", 7)):

@@ -7,8 +7,8 @@ sometimes zero, so the taken arm lands where the untaken one does.
 
 import pytest
 
-from deity_informant.tuneprog import jumptab
-from deity_informant.tuneprog.ir import Const, Load, Switch, Var
+from tuneprog import jumptab
+from tuneprog.ir import Const, Load, Switch, Var
 
 from _hvsc import DEFLEKTOR, ZETA, decompiled
 

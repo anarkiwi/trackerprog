@@ -1,8 +1,8 @@
 """S6 recovery: roles, struct views, tables and names from the IR alone."""
 
-from deity_informant.tuneprog import pipeline
-from deity_informant.tuneprog import recover as R
-from deity_informant.tuneprog import structure as S
+from tuneprog import pipeline
+from tuneprog import recover as R
+from tuneprog import structure as S
 
 from _asm import asm
 from _prog import PLAY, counter, tuneprog

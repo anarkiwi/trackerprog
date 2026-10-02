@@ -1,7 +1,7 @@
 """S3: regions from the op-level access relation -- strides, fields, kinds, pointers."""
 
-from deity_informant.tuneprog.lift import lift_trace
-from deity_informant.tuneprog.regions import build_regions, index_regions
+from tuneprog.lift import lift_trace
+from tuneprog.regions import build_regions, index_regions
 
 from _asm import asm, trace_prog
 

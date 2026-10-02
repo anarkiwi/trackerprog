@@ -21,8 +21,8 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from deity_informant.trackerprog import poison  # noqa: E402
-from deity_informant.tuneprog import tunes  # noqa: E402
+from trackerprog import poison  # noqa: E402
+from tuneprog import tunes  # noqa: E402
 
 CERTS = ROOT / "docs" / "certificates"
 DEFAULT_CACHE = ROOT / ".oracle-cache-poison"

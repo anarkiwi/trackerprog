@@ -36,13 +36,13 @@ from _frag import (  # noqa: E402
     t2_of,
     voiceblocks,
 )
-from deity_informant.trackerprog.passes import (  # noqa: E402
+from trackerprog.passes import (  # noqa: E402
     l1_structure,
     l2_phases,
     l3_roles,
 )
-from deity_informant.trackerprog.passes.ir import validate  # noqa: E402
-from deity_informant.tuneprog.ir import (  # noqa: E402
+from trackerprog.passes.ir import validate  # noqa: E402
+from tuneprog.ir import (  # noqa: E402
     Bin,
     Block,
     Goto,

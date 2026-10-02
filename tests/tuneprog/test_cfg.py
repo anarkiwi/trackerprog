@@ -5,10 +5,10 @@ from types import SimpleNamespace
 
 import pytest
 
-from deity_informant.tuneprog.cfg import _cfg_node, build_procs, procs_json
-from deity_informant.tuneprog.lift import lift_trace
-from deity_informant.tuneprog.machine import Refusal
-from deity_informant.tuneprog.regions import build_regions
+from tuneprog.cfg import _cfg_node, build_procs, procs_json
+from tuneprog.lift import lift_trace
+from tuneprog.machine import Refusal
+from tuneprog.regions import build_regions
 
 from _asm import asm, trace_prog
 

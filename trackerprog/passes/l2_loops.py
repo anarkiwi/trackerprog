@@ -8,9 +8,9 @@ zero and the sign bit a decrement past zero leaves.
 
 from __future__ import annotations
 
-from ...tuneprog.graph import cfg, idoms, natural_loops, preds_of, succs
-from ...tuneprog.ir import Bin, Const, Let, Load, Store, Var
-from ...tuneprog.irwalk import addr_split
+from tuneprog.graph import cfg, idoms, natural_loops, preds_of, succs
+from tuneprog.ir import Bin, Const, Let, Load, Store, Var
+from tuneprog.irwalk import addr_split
 from ..read import Unlowerable
 from .rir import read
 
@@ -227,7 +227,7 @@ def closes(low, got):
 
 
 def _walk(x):
-    from ...tuneprog.irwalk import walk  # pylint: disable=import-outside-toplevel
+    from tuneprog.irwalk import walk  # pylint: disable=import-outside-toplevel
 
     return walk(x) if x is not None else ()
 

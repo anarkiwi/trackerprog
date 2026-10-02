@@ -10,14 +10,14 @@ from __future__ import annotations
 
 import json
 
-from .. import c64
-from ..tuneprog import accum, pipeline, provenance
-from ..tuneprog.graph import succs
-from ..tuneprog.history import history
-from ..tuneprog.ir import Bin, Const, Let, Load, Store, Tuneprog, Var
-from ..tuneprog.irwalk import addr_split
-from ..tuneprog.recover import Names
-from ..tuneprog.tracedata import input_kind
+from deity_informant import c64
+from tuneprog import accum, pipeline, provenance
+from tuneprog.graph import succs
+from tuneprog.history import history
+from tuneprog.ir import Bin, Const, Let, Load, Store, Tuneprog, Var
+from tuneprog.irwalk import addr_split
+from tuneprog.recover import Names
+from tuneprog.tracedata import input_kind
 from . import lift as t2lift
 from .tree import stmts
 from .universal import CHIP, REG

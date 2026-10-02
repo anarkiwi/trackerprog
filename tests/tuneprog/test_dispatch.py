@@ -5,10 +5,10 @@ copy family whose last copy leaves the run into its own code, a branch whose
 patched offset is zero, and a ``JMP (ind)`` whose own operand is the patched one.
 """
 
-from deity_informant.tuneprog import pipeline
-from deity_informant.tuneprog.build import build_ir
-from deity_informant.tuneprog.ir import Const, Let, Load, Switch
-from deity_informant.tuneprog.verify import verify
+from tuneprog import pipeline
+from tuneprog.build import build_ir
+from tuneprog.ir import Const, Let, Load, Switch
+from tuneprog.verify import verify
 
 from _asm import asm
 from _prog import PLAY, front, tuneprog

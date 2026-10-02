@@ -3,7 +3,7 @@
 
 The denominator is the binary that played the tune, not ``tuneprog.md``.  Builds
 come from the poison registry, so the set of tunes and the set of certified
-subtunes are the same ones every other measurement in the layer uses.
+subtunes are the same ones every other comparison in the layer uses.
 """
 
 import argparse
@@ -18,8 +18,8 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "tools"))
 
 import trackerprog_poison as TP  # noqa: E402
-from deity_informant.trackerprog import sizes  # noqa: E402
-from deity_informant.tuneprog import tunes  # noqa: E402
+from trackerprog import sizes  # noqa: E402
+from tuneprog import tunes  # noqa: E402
 
 
 def _one(args):

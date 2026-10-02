@@ -32,7 +32,7 @@ needed · 5 what the spec got right · 6 finding the data · 7 measurements ·
 ## 1. The object
 
 `tools/trackerprog_goattracker.py` writes `trackerprog.json`;
-`deity_informant/trackerprog/universal.py` renders it.
+`trackerprog/universal.py` renders it.
 
 | section | Je suis Linus | Do It Again |
 | --- | --- | --- |
@@ -95,7 +95,7 @@ names a memory location.
 
 ## 3. The certificate
 
-`deity_informant/trackerprog/attest.py`, §2's comparison over the whole
+`trackerprog/attest.py`, §2's comparison over the whole
 certified horizon against the tune's own player on `deity_informant.PcodeVM`.
 
 | tune | ins | patterns | events | tuning | streams | accs | ticks | SID writes | divergences |

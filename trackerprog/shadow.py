@@ -9,8 +9,8 @@ from __future__ import annotations
 
 from collections import namedtuple
 
-from ..tuneprog.graph import cfg, idoms, natural_loops, preds_of
-from ..tuneprog.ir import Store
+from tuneprog.graph import cfg, idoms, natural_loops, preds_of
+from tuneprog.ir import Store
 from . import interp, region
 from .universal import REGNAME
 

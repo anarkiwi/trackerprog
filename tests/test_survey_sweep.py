@@ -41,7 +41,7 @@ def test_stack_field():
 
 
 def test_fault_classes():
-    from deity_informant.tuneprog.machine import Refusal
+    from tuneprog.machine import Refusal
 
     for exc, kind in (
         (Refusal("no entry", "play=0"), "refused"),

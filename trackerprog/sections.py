@@ -7,7 +7,7 @@ visits and ``state0`` from the post-init image.
 
 from __future__ import annotations
 
-from ..tuneprog.ir import Store
+from tuneprog.ir import Store
 from . import build, tables
 from .rows import blockrows, guards
 from .shape import _Out, _dce, _flags, _instruments, _latches, _merge_halves

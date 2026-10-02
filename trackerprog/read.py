@@ -10,10 +10,10 @@ edges decide.  Nothing here lowers a block into rows.
 
 from __future__ import annotations
 
-from ..tuneprog.accguard import _domsets, guardpath
-from ..tuneprog.graph import EXIT, cfg, idoms, natural_loops, postdoms, preds_of, rpo, succs
-from ..tuneprog.ir import Bin, Const, If, Let, Load, Store, Switch, Var, evalbin
-from ..tuneprog.irwalk import addr_split, walk
+from tuneprog.accguard import _domsets, guardpath
+from tuneprog.graph import EXIT, cfg, idoms, natural_loops, postdoms, preds_of, rpo, succs
+from tuneprog.ir import Bin, Const, If, Let, Load, Store, Switch, Var, evalbin
+from tuneprog.irwalk import addr_split, walk
 from .cells import ident
 
 MASK = {1: 0xFF, 2: 0xFFFF}

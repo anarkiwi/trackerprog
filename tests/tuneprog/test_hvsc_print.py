@@ -11,8 +11,8 @@ import re
 import pytest
 
 from deity_informant import cli
-from deity_informant.tuneprog import closure, pipeline
-from deity_informant.tuneprog.verify import verify
+from tuneprog import closure, pipeline
+from tuneprog.verify import verify
 
 from _hvsc import AUTOMATAS, COMMANDO, body, decompiled, folded, traced, tune
 

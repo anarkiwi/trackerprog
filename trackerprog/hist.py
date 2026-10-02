@@ -10,8 +10,8 @@ from __future__ import annotations
 
 import numpy as np
 
-from ..tuneprog.acchist import evalarr
-from ..tuneprog.ir import Bin, Const, Load, R16, Var
+from tuneprog.acchist import evalarr
+from tuneprog.ir import Bin, Const, Load, R16, Var
 from .resolve import Sel
 
 

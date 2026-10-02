@@ -7,8 +7,8 @@ number of times an inner loop turned, and the tick each row boundary landed on.
 
 from __future__ import annotations
 
-from ..tuneprog.graph import cfg, idoms, natural_loops, preds_of
-from ..tuneprog.ir import If, Let
+from tuneprog.graph import cfg, idoms, natural_loops, preds_of
+from tuneprog.ir import If, Let
 from . import interp
 from . import region as rgn
 

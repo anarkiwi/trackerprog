@@ -2,13 +2,13 @@
 
 import pytest
 
-from deity_informant.tuneprog import closure, pipeline, printer
-from deity_informant.tuneprog.cfg import build_procs
-from deity_informant.tuneprog.ir import Load, Trap
-from deity_informant.tuneprog.irwalk import node_exprs, walk
-from deity_informant.tuneprog.lift import lift_trace
-from deity_informant.tuneprog.regions import build_regions
-from deity_informant.tuneprog.verify import verify
+from tuneprog import closure, pipeline, printer
+from tuneprog.cfg import build_procs
+from tuneprog.ir import Load, Trap
+from tuneprog.irwalk import node_exprs, walk
+from tuneprog.lift import lift_trace
+from tuneprog.regions import build_regions
+from tuneprog.verify import verify
 
 from _asm import asm
 from _prog import PLAY, front, proc_body as body

@@ -3,7 +3,7 @@
 ``tools/trackerprog_commando.py`` states the certified Commando tuneprog in
 prototype-trackerprog.md's own vocabulary -- pitch, instruments, streams,
 bounded accumulators, a score of events -- and
-:mod:`deity_informant.trackerprog.universal` renders it.  The claim these tests
+:mod:`trackerprog.universal` renders it.  The claim these tests
 make is the section 2 certificate: 0 divergences over each subtune's whole
 horizon, against the tune's own player on the PcodeVM.
 """
@@ -16,9 +16,9 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tuneprog"))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "tools"))
 
-from deity_informant.trackerprog import printer  # noqa: E402
-from deity_informant.trackerprog.attest import attest  # noqa: E402
-from deity_informant.trackerprog.universal import render  # noqa: E402
+from trackerprog import printer  # noqa: E402
+from trackerprog.attest import attest  # noqa: E402
+from trackerprog.universal import render  # noqa: E402
 
 import trackerprog_commando as TC  # noqa: E402
 from _hvsc import COMMANDO, tune_file  # noqa: E402
@@ -197,7 +197,7 @@ def test_the_print_is_flat_and_round_trips_the_object_by_eye(song):
 
 
 def test_the_only_intermediate_writes_that_differ_are_superseded():
-    """What dropping the fabricated note costs, measured rather than asserted.
+    """What dropping the fabricated note costs, computed rather than asserted.
 
     An unpitched sound has no semitone above it, so a vibrato over it steps by
     nothing.  Hubbard's routine steps by whatever lies past his tuning instead,
@@ -224,7 +224,7 @@ def test_the_only_intermediate_writes_that_differ_are_superseded():
 
 
 def _canonical(events):
-    """Section 3.6's event, as the layer states it after the note column is spent."""
+    """Section 3.6's event, as the layer states it after the note column is consumed."""
     for e in events:
         assert set(e) == {"dur", "sounds", "tie", "gate", "note", "ins", "arm"}
         assert isinstance(e["sounds"], bool)

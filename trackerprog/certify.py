@@ -10,7 +10,7 @@ from __future__ import annotations
 import hashlib
 import json
 
-from ..tuneprog.facts import SID_VOICE, SID_VOICES
+from tuneprog.facts import SID_VOICE, SID_VOICES
 
 COMPARED = [
     "per-voice ctrl/AD/SR write order",

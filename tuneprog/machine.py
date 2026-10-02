@@ -2,7 +2,7 @@
 
 Public API:
 
-* ``MachineImage.from_sid(data)`` -- 64 KiB pre-init image (power-on RAM overlaid
+* ``MachineImage.from_sid(data)`` -- whole-address-space pre-init image (power-on RAM overlaid
   with the load band) plus the header facts a driver needs.
 * ``find_entries(data, mem=None, written=None, song=None)`` -- ``(MachineImage,
   [Entry(kind, addr, cycles_per_tick, source, kernal)])``; raises :class:`Refusal`.
@@ -27,7 +27,7 @@ from __future__ import annotations
 from dataclasses import dataclass, asdict
 from functools import lru_cache
 
-from .. import c64
+from deity_informant import c64
 
 INIT_BUDGET = 2_000_000
 PAL_FRAME = 19656
@@ -91,7 +91,7 @@ def frame_slots(entry):
 
 @dataclass
 class MachineImage:
-    """The 64 KiB pre-init machine image and the container's entry facts."""
+    """The whole-address-space pre-init machine image and the container's entry facts."""
 
     mem: bytes
     lo: int

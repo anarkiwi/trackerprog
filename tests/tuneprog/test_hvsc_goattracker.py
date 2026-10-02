@@ -9,7 +9,7 @@ import re
 
 import pytest
 
-from deity_informant.tuneprog import pipeline, printer
+from tuneprog import pipeline, printer
 
 from _hvsc import DIA, LINUS, body, decompiled, load_addrs, switches, traced
 

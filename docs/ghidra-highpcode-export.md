@@ -53,7 +53,7 @@ Two Ghidra behaviours fold an SMC cell back to a constant before it reaches high
 ## 2. Running it
 
 ```bash
-deity-informant tuneprog TUNE.sid --out OUT --seconds 20 --ghidra-facts
+tuneprog TUNE.sid --out OUT --seconds 20 --ghidra-facts
 python3 tools/tuneprog_ghidra.py OUT --dst OUT/ghidra      # or, from a finished dir
 
 docker build -f Dockerfile.ghidra -t di-ghidra .

@@ -4,10 +4,10 @@ import ast
 import json
 from pathlib import Path
 
-from deity_informant.tuneprog import tunes
+from tuneprog import tunes
 
 ROOT = Path(__file__).resolve().parents[2]
-SOURCES = (ROOT / "deity_informant", ROOT / "tests", ROOT / "tools")
+SOURCES = (ROOT / "tuneprog", ROOT / "trackerprog", ROOT / "tests", ROOT / "tools")
 MAP = Path(tunes.__file__).resolve()
 
 

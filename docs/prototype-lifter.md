@@ -1,6 +1,6 @@
 # Prototype: the trackerprog as a binding of a certified tune's planes
 
-There is one player — `deity_informant/trackerprog/universal.py` — with a fixed
+There is one player — `trackerprog/universal.py` — with a fixed
 tick procedure ([prototype-trackerprog.md](prototype-trackerprog.md) §4), a
 fixed state vector and a fixed set of things it reads. A certified tuneprog has
 those same things under other names, and the planes already name them. A
@@ -46,7 +46,7 @@ canonicalisation) and names, form by form, what a covering can and cannot reach.
 
 ## 1. The binding, field by field
 
-`deity_informant/trackerprog/{bind,rows,events,records,shape,sections}.py`, on
+`trackerprog/{bind,rows,events,records,shape,sections}.py`, on
 top of `read.py` (the expression and guard reader) and `schedule.py` (B6).
 
 | object | plane | what it supplied |
@@ -261,6 +261,6 @@ top. It is deleted (`lower.py`, `flow.py`, `unroll.py`, `recognise.py`,
 | accumulators joined | 3 of 7 Commando, 0 of 7 JCH, 0 of 9 GT2 | 3, 2 | 7, 7 |
 
 The player and the planes are untouched by this pass: `universal.py`,
-`compiler.py` and everything under `deity_informant/tuneprog/` are unchanged
+`compiler.py` and everything under `tuneprog/` are unchanged
 against #351, so there is no poison harness run and no recertification to make —
 the binding needed neither a player mechanism nor a plane change.

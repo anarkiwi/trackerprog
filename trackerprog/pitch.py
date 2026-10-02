@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from ..tuneprog.recover import _freq_layout, _layouts
+from tuneprog.recover import _freq_layout, _layouts
 
 
 def regions(prog, names):

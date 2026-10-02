@@ -9,8 +9,8 @@ import re
 
 import pytest
 
-from deity_informant.tuneprog import ssa
-from deity_informant.tuneprog.ir import Const, Store
+from tuneprog import ssa
+from tuneprog.ir import Const, Store
 
 from _hvsc import EMOMYST, EOTW, body, decompiled, load_addrs, switches
 

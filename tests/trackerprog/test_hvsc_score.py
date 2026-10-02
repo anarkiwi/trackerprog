@@ -9,12 +9,12 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tuneprog"))
 
-from deity_informant.trackerprog import lift  # noqa: E402
-from deity_informant.tuneprog import pipeline  # noqa: E402
-from deity_informant.tuneprog.history import history  # noqa: E402
-from deity_informant.tuneprog.ir import Tuneprog  # noqa: E402
-from deity_informant.tuneprog.recover import Names  # noqa: E402
-from deity_informant.tuneprog.tracedata import Trace  # noqa: E402
+from trackerprog import lift  # noqa: E402
+from tuneprog import pipeline  # noqa: E402
+from tuneprog.history import history  # noqa: E402
+from tuneprog.ir import Tuneprog  # noqa: E402
+from tuneprog.recover import Names  # noqa: E402
+from tuneprog.tracedata import Trace  # noqa: E402
 
 from _hvsc import COMMANDO, EMOMYST, GULDKORN, LINUS, tune_file  # noqa: E402
 

@@ -5,7 +5,7 @@ word once a turn, and a block the program cannot leave.
 """
 
 from _bound import C, GLOB, SWEEP, V, ram, store
-from deity_informant.tuneprog.ir import (
+from tuneprog.ir import (
     Bin,
     Block,
     Goto,

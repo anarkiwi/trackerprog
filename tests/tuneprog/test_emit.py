@@ -4,9 +4,9 @@ import json
 
 import pytest
 
-from deity_informant.tuneprog import emit
-from deity_informant.tuneprog.interp import Interp, Machine
-from deity_informant.tuneprog.ir import (
+from tuneprog import emit
+from tuneprog.interp import Interp, Machine
+from tuneprog.ir import (
     Assert,
     Block,
     Const,
@@ -23,7 +23,7 @@ from deity_informant.tuneprog.ir import (
     Tuneprog,
     Var,
 )
-from deity_informant.tuneprog.verify import Reference, Verifier
+from tuneprog.verify import Reference, Verifier
 
 from _asm import asm
 from _prog import PLAY, counter, tuneprog
@@ -273,7 +273,7 @@ def test_assert_and_plain_condition_and_far_branches_compile():
 
 
 def test_a_phi_in_the_emitted_program_is_refused():
-    from deity_informant.tuneprog.ir import Phi
+    from tuneprog.ir import Phi
 
     proc = Proc("f", (), (), {"b": Block("b", [Phi("A", {})], Return(()))}, "b")
     with pytest.raises(ValueError, match="phi"):
