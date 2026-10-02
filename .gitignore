@@ -30,6 +30,3 @@ core.*
 # agent worktrees / local harness state
 .claude/
 .nfs*
-
-# deity-informant source checkout (CI)
-_deity/

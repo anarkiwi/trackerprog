@@ -11,15 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/checkout@v7
-        with:
-          repository: anarkiwi/deity-informant
-          path: _deity
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - name: Install
-        run: pip install -e ./_deity -e ".[dev]"
+        run: pip install -e ".[dev]"
       - name: Format
         run: black --check tuneprog/ trackerprog/ tests/ tools/ ghidra/
       - name: Lint
@@ -35,15 +31,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/checkout@v7
-        with:
-          repository: anarkiwi/deity-informant
-          path: _deity
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - name: Install
-        run: pip install -e ./_deity -e ".[dev,oracle]"
+        run: pip install -e ".[dev,oracle]"
       - name: Cache HVSC tunes
         uses: actions/cache@v6
         with:
@@ -66,22 +58,18 @@ jobs:
     # ghidra/6510/headless/run.sh: the hello-world SMC export (the self-modified
     # STA must decompile as a store through its own operand cell), the
     # complexity/coverage oracle, the P-Code emulator semantic oracle, the IRQ
-    # frame and the banking gate. Ghidra, JDK and deity-informant live in a
-    # multistage image (Dockerfile.ghidra); its layers are GHA-cached.
+    # frame and the banking gate. Ghidra + JDK live in a multistage image
+    # (Dockerfile.ghidra); its layers are GHA-cached.
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
       - uses: docker/setup-buildx-action@v4
-      - name: Resolve deity-informant ref
-        id: deity
-        run: echo "sha=$(git ls-remote https://github.com/anarkiwi/deity-informant HEAD | cut -f1)" >> "$GITHUB_OUTPUT"
       - name: Build Ghidra integration image
         uses: docker/build-push-action@v7
         with:
           context: .
           file: Dockerfile.ghidra
           tags: tp-ghidra:ci
-          build-args: DEITY_REF=${{ steps.deity.outputs.sha }}
           load: true
           cache-from: type=gha
           cache-to: type=gha,mode=max

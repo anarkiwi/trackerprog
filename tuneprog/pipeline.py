@@ -493,5 +493,17 @@ def _more(st, t0, log):
     return MORE
 
 
+def complete(argv, log=print):
+    """Run ``argv`` to the end: once, then with ``--resume`` while it returns :data:`MORE`.
+
+    The exit code is the last invocation's, so it is independent of how much CPU
+    one ``--budget`` buys on the host running it.
+    """
+    rc = run(parser().parse_args(argv), log)
+    while rc == MORE:
+        rc = run(parser().parse_args([*argv, "--resume"]), log)
+    return rc
+
+
 def main(argv=None):
     return run(parser().parse_args(argv))

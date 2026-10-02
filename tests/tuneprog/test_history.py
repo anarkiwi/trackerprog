@@ -114,7 +114,7 @@ def test_a_divergence_truncates_the_history_at_the_tick_before_it():
 @pytest.mark.hvsc
 def test_the_named_state_of_a_goattracker_tune_replays_without_divergence(tmp_path):
     out = tmp_path / "linus"
-    assert pipeline.main([str(tune_file(LINUS)), "--out", str(out), "--calls", "64"]) == 0
+    assert pipeline.complete([str(tune_file(LINUS)), "--out", str(out), "--calls", "64"]) == 0
     prog = Tuneprog.load(out / "tuneprog.S4.json")
     doc = json.loads((out / "tuneprog.S6.json").read_text())
     regions = json.loads((out / "regions.json").read_text())

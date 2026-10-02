@@ -10,7 +10,6 @@ import re
 
 import pytest
 
-from deity_informant import cli
 from tuneprog import closure, pipeline
 from tuneprog.verify import verify
 
@@ -142,7 +141,7 @@ def test_the_cli_subcommand_decompiles_commando_at_a_short_horizon(tmp_path):
     sid = tmp_path / "Commando.sid"
     sid.write_bytes(tune(COMMANDO))
     out = tmp_path / "out"
-    assert cli.main(["tuneprog", str(sid), "--out", str(out), "--seconds", "5"]) == 0
+    assert pipeline.complete([str(sid), "--out", str(out), "--seconds", "5"]) == 0
     doc = (out / "tuneprog.md").read_text()
     assert doc.startswith("# tuneprog: Commando.sid")
     assert "## program" in doc and "tick(" in doc

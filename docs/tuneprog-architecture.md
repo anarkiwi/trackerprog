@@ -248,7 +248,7 @@ traversals every stage shares.
 
 ### 3.3 One illegal opcode all the way through
 
-`examples/hello_world.py`'s inner loop is `LAX $1013,Y` (`$BF`, `absy`) — an
+deity-informant's `deity_informant/hello_world.py`'s inner loop is `LAX $1013,Y` (`$BF`, `absy`) — an
 illegal opcode whose Z flag the loop's `BEQ` rides — feeding a `STA $0400` whose
 low operand byte `$100A` is self-modified by the equally illegal `ISC $100A`.
 
@@ -270,7 +270,7 @@ low operand byte `$100A` is self-modified by the equally illegal `ISC $100A`.
 4. **Residualise.** Nothing writes `$1003`/`$1004`, so `lift.lift_site` leaves the
    `$1013` constant alone. At `$1009` it does not: `ISC` writes `$100A`, so that
    byte is in `Trace.cells` and the `STORE [c $0400], A` becomes a store through
-   `load16($100A)` — the abstraction `ghidra/6510/smc.py` spells as the SLEIGH
+   `load16($100A)` — the abstraction deity-informant's `deity_informant/sleigh/smc.py` spells as the SLEIGH
    `smc_addr` context constructor.
 5. **Type and build.** The addresses op 2 touched, `$1013..$101F`, union into one
    read-only region inside the load band (`kind = "const"`), and each accessor

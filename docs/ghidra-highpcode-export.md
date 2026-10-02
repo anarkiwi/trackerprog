@@ -9,7 +9,7 @@ runs all three over every committed certificate.
 
 `tuneprog/lift.py` abstracts SMC mechanically: the trace gives the written instruction bytes (`Trace.cells`),
 byte provenance gives the constant varnode each byte feeds, and S2a replaces every constant whose provenance
-hits a cell with a `LOAD` from the cell's address. `ghidra/6510/smc.py` generates the same transformation as
+hits a cell with a `LOAD` from the cell's address. deity-informant's `deity_informant/sleigh/smc.py` generates the same transformation as
 SLEIGH constructors, applied during decode.
 
 | context bit | applies to | semantics |

@@ -10,7 +10,6 @@ from collections import Counter
 
 import pytest
 
-from deity_informant import cli
 from tuneprog import pipeline, printer, provenance
 from tuneprog.facts import GLOBAL_REG, VOICE_REG
 
@@ -84,7 +83,7 @@ def test_the_pipeline_writes_the_document_beside_s6(tmp_path):
     sid = tmp_path / "Guldkornekspressen_Intro.sid"
     sid.write_bytes(tune(GULDKORN))
     out = tmp_path / "out"
-    assert cli.main(["tuneprog", str(sid), "--out", str(out), "--seconds", "5"]) == 0
+    assert pipeline.complete([str(sid), "--out", str(out), "--seconds", "5"]) == 0
     doc = json.loads((out / "tuneprog.T0.json").read_text())
     lines = {l.strip() for l in (out / "tuneprog.md").read_text().splitlines()}
     assert doc["plane"] == "S6-view" and doc["voice_map"] and doc["writes"]
