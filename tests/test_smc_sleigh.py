@@ -8,14 +8,9 @@ self-modified ``STA $0400`` into a store through the operand bytes it modifies.
 import pytest
 
 from deity_informant import PcodeVM, lift
-from tuneprog import deity
+from deity_informant.hello_world import ORG, PROGRAM, STA_PC
+from deity_informant.sleigh import build as build6510, smc
 from tuneprog.lift import lift_site
-
-deity.on_path()
-# pylint: disable=wrong-import-position
-from examples.hello_world import ORG, PROGRAM, STA_PC  # noqa: E402
-import build as build6510  # noqa: E402
-import smc  # noqa: E402
 
 pypcode = pytest.importorskip("pypcode")
 

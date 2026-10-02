@@ -4,7 +4,7 @@ C64 SID tune decompilation on [deity-informant](https://github.com/anarkiwi/deit
 
 ## Components
 
-- `tuneprog/` — the tuneprog decompiler: pipeline S0-S8, IR, verification and certificates (`docs/tuneprog-architecture.md`). `tuneprog/deity.py` locates the deity-informant source checkout (`$DEITY_INFORMANT_SRC`) for its SLEIGH build and demo.
+- `tuneprog/` — the tuneprog decompiler: pipeline S0-S8, IR, verification and certificates (`docs/tuneprog-architecture.md`).
 - `trackerprog/` — the trackerprog: `universal.py` (the one player), the binding lift (`bind.py`, `lift.py`), and `passes/` (the L0-L6 compiler passes).
 - `ghidra/6510/headless/` — Ghidra headless oracles over deity-informant's 6510 SLEIGH module: `ExportHighPcode.java` (facts-driven high P-Code/C export), `EmulateTrace.java` (P-Code emulator semantic oracle), `run.sh` (run via `Dockerfile.ghidra`).
 - `docs/tuneprog-architecture.md` — **the canonical tuneprog reference**: definitions, pipeline S0-S8, the lift end to end, the IR, verification and the certificate schema, presentation, CLI and tools, the machine model and its boundaries, the certified exemplars, the module map, the process.
@@ -30,11 +30,8 @@ C64 SID tune decompilation on [deity-informant](https://github.com/anarkiwi/deit
 ## Install
 
 ```bash
-git clone https://github.com/anarkiwi/deity-informant && pip install -e "deity-informant[dev]"
 pip install -e ".[dev]"          # + ".[oracle]" for pysidtracker (sidplayfp oracle, needs Docker + HVSC)
 ```
-
-deity-informant is installed from a source checkout because the SLEIGH build (`ghidra/6510/`) and `examples/hello_world.py` are not in its wheel; set `DEITY_INFORMANT_SRC` if the checkout is not the one `deity_informant` is imported from.
 
 ## CLI
 
@@ -63,7 +60,7 @@ python3 tools/tuneprog_period.py TUNE.sid --song 1 --out DIR --resume          #
 
 ## Ghidra
 
-`docker build -f Dockerfile.ghidra -t tp-ghidra . && docker run --rm tp-ghidra` runs the headless smoke oracles (`--build-arg DEITY_REF=...` pins deity-informant); `.github/workflows/nightly.yml` runs the three oracles over every certificate.
+`docker build -f Dockerfile.ghidra -t tp-ghidra . && docker run --rm tp-ghidra` runs the headless smoke oracles; `.github/workflows/nightly.yml` runs the three oracles over every certificate.
 
 ## Tests
 

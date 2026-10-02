@@ -3,7 +3,6 @@
 import json
 import re
 
-from deity_informant import cli
 from tuneprog import live, pipeline, printer, pseudocode, recover, structure
 from tuneprog.ir import Tuneprog
 
@@ -302,9 +301,9 @@ def _flat(nodes):
             yield from _flat(n.get(f, []))
 
 
-def test_the_cli_subcommand_runs_the_same_pipeline(tmp_path, capsys):
+def test_the_console_script_runs_the_same_pipeline(tmp_path, capsys):
     out = tmp_path / "cli"
-    rc = cli.main(["tuneprog", str(_tune(tmp_path)), "--out", str(out), "--calls", "6"])
+    rc = pipeline.main([str(_tune(tmp_path)), "--out", str(out), "--calls", "6"])
     assert rc == 0
     assert "tick" in capsys.readouterr().out or (out / "tuneprog.md").exists()
     assert (out / "tuneprog.md").read_text().startswith("# tuneprog: snippet.sid")
@@ -312,15 +311,11 @@ def test_the_cli_subcommand_runs_the_same_pipeline(tmp_path, capsys):
 
 def test_no_verify_and_no_text_skip_their_stages(tmp_path):
     out = tmp_path / "quiet"
-    rc = cli.main(
-        ["tuneprog", str(_tune(tmp_path)), "--out", str(out), "--calls", "4", "--no-verify"]
-    )
+    rc = pipeline.main([str(_tune(tmp_path)), "--out", str(out), "--calls", "4", "--no-verify"])
     assert rc == 0 and not (out / "certificate.json").exists()
     assert (out / "tuneprog.md").exists()
     out2 = tmp_path / "quiet2"
-    rc = cli.main(
-        ["tuneprog", str(_tune(tmp_path)), "--out", str(out2), "--calls", "4", "--no-text"]
-    )
+    rc = pipeline.main([str(_tune(tmp_path)), "--out", str(out2), "--calls", "4", "--no-text"])
     assert rc == 0 and not (out2 / "tuneprog.md").exists()
 
 
