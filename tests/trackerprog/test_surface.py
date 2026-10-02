@@ -52,7 +52,7 @@ UNMEASURED = {  # left to ``tools/trackerprog_surface.py``, and why
 def _stops(rel):
     """``(the level this family stops at, why)``, from planes built for this run."""
     out = Path(mkdtemp()) / "lift"
-    assert pipeline.main([str(tune_file(rel)), "--out", str(out), "--calls", str(CALLS)]) == 0
+    assert pipeline.complete([str(tune_file(rel)), "--out", str(out), "--calls", str(CALLS)]) == 0
     _levels, rep = from_l0(out)
     for name, got in rep["levels"].items():
         if got.get("pass") != "ok":

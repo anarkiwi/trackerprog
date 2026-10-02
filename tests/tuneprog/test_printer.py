@@ -332,6 +332,25 @@ def test_a_chunked_run_resumes_where_it_stopped(tmp_path):
     assert json.loads((out / "certificate.json").read_text())["subtunes"][0]["ticks"] == 64
 
 
+def test_complete_runs_a_budget_starved_run_to_the_end(tmp_path):
+    out = tmp_path / "complete"
+    argv = [
+        str(_tune(tmp_path)),
+        "--out",
+        str(out),
+        "--calls",
+        "64",
+        "--budget",
+        "0",
+        "--chunk",
+        "8",
+    ]
+    assert pipeline.main(argv) == pipeline.MORE
+    assert pipeline.complete(argv, log=lambda _: None) == 0
+    assert json.loads((out / "certificate.json").read_text())["subtunes"][0]["ticks"] == 64
+    assert (out / "tuneprog.md").exists()
+
+
 def test_the_printed_program_names_every_procedure_it_prints():
     _T, prog = tuneprog(
         asm(

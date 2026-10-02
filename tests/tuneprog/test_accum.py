@@ -664,7 +664,9 @@ def exemplar(rel, calls=1200):
     """The T1 document of one HVSC exemplar through ``pipeline.main``, once."""
     if rel not in _T1:
         out = Path(mkdtemp()) / "t1"
-        assert pipeline.main([str(tune_file(rel)), "--out", str(out), "--calls", str(calls)]) == 0
+        assert (
+            pipeline.complete([str(tune_file(rel)), "--out", str(out), "--calls", str(calls)]) == 0
+        )
         prog = Tuneprog.load(out / "tuneprog.S4.json")
         s6 = json.loads((out / "tuneprog.S6.json").read_text())
         t0 = json.loads((out / "tuneprog.T0.json").read_text())

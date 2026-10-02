@@ -24,7 +24,9 @@ INSTRUMENTS = {LINUS: 30, GULDKORN: 19, COMMANDO: 13, EMOMYST: 11}
 def exemplar(rel, calls=1200):
     if rel not in _T3:
         out = Path(mkdtemp()) / "t3"
-        assert pipeline.main([str(tune_file(rel)), "--out", str(out), "--calls", str(calls)]) == 0
+        assert (
+            pipeline.complete([str(tune_file(rel)), "--out", str(out), "--calls", str(calls)]) == 0
+        )
         doc, tp, refusals, numbers, _secs = T3.run(out, calls)
         _T3[rel] = doc, tp, refusals, numbers, out
     return _T3[rel]

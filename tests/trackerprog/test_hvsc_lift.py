@@ -32,7 +32,9 @@ def artefacts(rel, calls=CALLS):
     """The certified artefacts of one exemplar, and its T0/T1/T2 planes."""
     if rel not in _ART:
         out = Path(mkdtemp()) / "lift"
-        assert pipeline.main([str(tune_file(rel)), "--out", str(out), "--calls", str(calls)]) == 0
+        assert (
+            pipeline.complete([str(tune_file(rel)), "--out", str(out), "--calls", str(calls)]) == 0
+        )
         prog = Tuneprog.load(out / "tuneprog.S4.json")
         cert = json.loads((out / "certificate.json").read_text())
         _ART[rel] = build.artefacts(prog, Trace.load(out), cert, calls=calls)

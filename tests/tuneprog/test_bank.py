@@ -109,6 +109,6 @@ def test_a_certificate_pins_no_input_for_the_ram_under_io(tmp_path):
     out = tmp_path / "o"
     sid = tmp_path / "banked.sid"
     sid.write_bytes(psid({PLAY: BANKED}, BANKED.labels["init"], BANKED.labels["play"]))
-    assert pipeline.main([str(sid), "--out", str(out), "--calls", str(CALLS)]) == 0
+    assert pipeline.complete([str(sid), "--out", str(out), "--calls", str(CALLS)]) == 0
     sub = json.loads((out / "certificate.json").read_text())["subtunes"][0]
     assert sub["divergences"] == 0 and sub["inputs_pinned"] == 0
